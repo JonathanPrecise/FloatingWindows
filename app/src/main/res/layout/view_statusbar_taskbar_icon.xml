@@ -9,5 +9,5 @@
      android:minWidth="0dp"
      android:padding="10dp"
      android:scaleType="fitCenter"
-     android:src="@drawable/ic_launcher" />
+     android:src="@mipmap/ic_launcher" />
 

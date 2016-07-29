@@ -12,7 +12,7 @@
             android:id="@+id/searchText"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_toLeftOf="@+id/searchButton"
+            android:layout_toStartOf="@+id/searchButton"
             android:ems="10"
             android:hint="@android:string/search_go" >
 
@@ -24,10 +24,11 @@
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/blacklist_search" />
+            android:src="@drawable/blacklist_search"
+            android:contentDescription="@string/searchButton_search" />
 
     </RelativeLayout>
 
@@ -41,7 +42,7 @@
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="0" >
     </ListView>
 

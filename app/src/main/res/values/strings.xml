@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">XHFW3</string>
+    <string name="app_name">FloatWin Extension for DesktopMode</string>
+    <string name="launcher_name">FloatWin Settings</string>
     <string name="hello_world">Hello world!</string>
-	<string name="app_description">Halo Floating Windows from Paranoid Android with Movable &amp; Resizable feature.(zst123)</string>
-    <string name="app_blacklist">Blacklist</string>
-    <string name="app_whitelist">Whitelist</string>
-	<string name="app_maximized">Maximized List</string>
+	<string name="app_description">Floating Windows extension for rooted Desktop Mode users</string>
+    <string name="app_blacklist">Ignored apps</string>
+    <string name="app_whitelist">Forced apps</string>
+	<string name="app_maximized">Maximized apps</string>
     <string name="app_testing">Testing</string>
     <string name="app_statusbar_taskbar">Statusbar Taskbar</string>
+
+    <!-- Advanced -->
+    <string name="app_advanced">Advanced</string>
+    <string name="app_firstrunwarning_title">Disclaimer</string>
+    <string name="app_firstrunwarning_summary">This extension modifies the system. Therefore, bad things can happen, including (but not limited to): crashes, bootloops, bricked devices, cosmic explosions, system instability, alien invasions, etc.\n\nJokes aside, we claim no responsibility for any damage caused by this extension, and by accepting this disclaimer, hold the sole responsibility of any damages done.\n\nIf this scared you, you can calm down a bit. This has been tested on numerous devices without problem. And in effect, nothing SHOULD go wrong. But your device might be different, and it has a small possibility of something backfiring. Hence the disclaimer ;)</string>
+    <string name="app_firstrunwarning_positive">Go ahead</string>
+    <string name="app_firstrunwarning_negative">Nevermind</string>
+    <string name="app_firstruninstructions_title">Instructions</string>
+    <string name="app_firstruninstructions_summary">Now we can proceed activating the extension!\n\nActually, this is an Xposed module (https://jonathan-apps.com/help/faq/what-is-xposed/), which requires the Xposed Framework. If you already have Xposed, tap on \"ENABLE\".\n\nOtherwise, tap on \"DOWNLOAD\".</string>
+    <string name="app_firstruninstructions_positive">Download</string>
+    <string name="app_firstruninstructions_negative">Enable</string>
 
 	<!-- Gravity -->
     <string name="option_gravity_1">Top Left Corner</string>
@@ -43,20 +55,20 @@
     <string name="add">Add</string>
     <string name="help">Help</string>
     <string name="close_once">Remind me later</string>
-    <string name="close_forever">Close Forever</string>
+    <string name="close_forever">@android:string/ok</string>
 
-	<string name="pref_main_top_title">Main Settings</string>
+	<string name="pref_main_top_title">General</string>
     <!-- First Preference Screen -->
     <string name="pref_window_top_title">Popup Window</string>
     <string name="pref_window_top_summary">Customize Window Properties</string>
-    <string name="pref_alpha_title">Popup Alpha</string>
+    <string name="pref_alpha_title">Popup Transparency</string>
     <string name="pref_alpha_summary">Transparency of Window</string>
     <string name="pref_dim_title">Popup Dim</string>
     <string name="pref_dim_summary">Background Dimming of Popup</string>
-    <string name="pref_gravity_title">Gravity</string>
+    <string name="pref_gravity_title">Popup position</string>
     <string name="pref_gravity_summary">Position of the Popup</string>
-	<string name="pref_behavior_title">Window behavior</string>
-	<string name="pref_overlay_title">Titlebar and corners</string>
+	<string name="pref_behavior_title">Window</string>
+	<string name="pref_overlay_title">Titlebar</string>
 
     <!-- 2nd Preference Screen -->
     <string name="pref_size_top_title">Popup Size</string>
@@ -74,46 +86,46 @@
 
     <!-- 3rd Preference Screen -->
     <string name="pref_behave_top_title">Popup Behavior</string>
-    <string name="pref_behave_top_summary">Customize behaviour of popup window </string>
+    <string name="pref_behave_top_summary">Customize behaviour of popup window. </string>
     <string name="pref_app_pause_title">App Pausing</string>
-    <string name="pref_app_pause_summary_off">Do not pause the below app when a Halo window is above (Halo)</string>
-    <string name="pref_app_pause_summary_on">Pause the below app when a Halo window is above (Default)</string>
+    <string name="pref_app_pause_summary_off">Do not pause the below app when a Floating window is above. (Toggling may cause bugs)</string>
+    <string name="pref_app_pause_summary_on">Pause the below app when a Floating window is above. (May cause bugs)</string>
     <string name="pref_keyboard_title">Keyboard Mode</string>
-    <string name="pref_keyboard_summary">The action the popup will do when a keyboard opens.</string>
+    <string name="pref_keyboard_summary">The action the popup will do when a keyboard opens. (Changing this may cause bugs)</string>
     <string name="pref_disable_auto_close_title">Disable Auto Close</string>
-    <string name="pref_disable_auto_close_summary">Disable closing the app window when screen turns off or home is pressed.</string>
+    <string name="pref_disable_auto_close_summary">Disable closing the app window when screen turns off or home is pressed. (Changing this may cause bugs)</string>
     <string name="pref_show_recents_title">Show App in Recents</string>
-    <string name="pref_show_recents_summary">Allows the app to be shown in the recents screen.</string>
+    <string name="pref_show_recents_summary">Allows the app to be shown in the recents screen. (Not recommended)</string>
     <string name="pref_force_recents_title">Force App in Recents</string>
-    <string name="pref_force_recents_summary">Bypass hiding done by app launchers &amp; force the app to be shown in recents screen.</string>
-    <string name="pref_force_open_app_above_halo_title">Force New Windows in Halo</string>
-    <string name="pref_force_open_app_above_halo_summary">If an app is currently open in floating mode, new apps that open above it is forced to open in floating mode.</string>
+    <string name="pref_force_recents_summary">Force the app to be shown in recents screen, regardless of the app\'s configuration. (Not recommended)</string>
+    <string name="pref_force_open_app_above_halo_title">Force New Windows to open in floating mode</string>
+    <string name="pref_force_open_app_above_halo_summary">If an app is currently open in floating mode, new apps that open above it are forced to open in floating mode. (Recommended)</string>
 	<string name="pref_force_open_alt_gravity_title">Force new windows snap side by side</string>
 	<string name="pref_force_open_alt_gravity_summary">No floating apps on start, just AeroSnaps</string>
-    <string name="pref_blacklist_title">Blacklist Apps</string>
-    <string name="pref_blacklist_summary">Choose a list of apps to never open in floating mode</string>
-    <string name="pref_blacklist_dialog">Newly blacklisted apps needs to be force-closed for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.</string>
+    <string name="pref_blacklist_title">Ignore Apps</string>
+    <string name="pref_blacklist_summary">Choose a list of apps to never open in floating mode. (Use in case the app doesn\'t work in floating mode)</string>
+    <string name="pref_blacklist_dialog">Newly ignored apps needs to be force-closed for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.</string>
     <string name="pref_blacklist_error">There was an error opening the App Info.\nThis is the error.\n\n</string>
-    <string name="pref_whitelist_title">Whitelist Apps</string>
+    <string name="pref_whitelist_title">Force Apps</string>
     <string name="pref_whitelist_summary">Choose a list of apps to always open in floating mode</string>
-    <string name="pref_whitelist_dialog">Newly whitelisted apps needs to be force-closed for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.\n\nNote that blacklisting has a higher priority over whitelisting if you were to select the same app in both lists.</string>
+    <string name="pref_whitelist_dialog">Newly added apps needs to be force-closed for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.\n\nNote that ignoring has a higher priority over forcing if you were to select the same app in both lists.</string>
 	<string name="pref_maximized_title">Maximized Apps</string>
     <string name="pref_maximized_summary">Choose a list of apps to always open maximized</string>
     <string name="pref_maximized_dialog">Newly auto maximized apps need to be force-closed for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.</string>
-	<string name="pref_launcher_title">FloatDot Launcher Apps</string>
-    <string name="pref_launcher_summary">Choose a list of apps to show in launcher menu</string>
+	<string name="pref_launcher_title">DEPRECATED: FloatDot Launcher Apps</string>
+    <string name="pref_launcher_summary">Choose a list of apps to show in launcher menu. (DEPRECATED: FloatDot Launcher is not relevant to Desktop Mode)</string>
     <string name="pref_launcher_dialog">To reopen apps as movable you might need to force-close them for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.</string>
-	<string name="pref_whiteblacklist_title">Whitelist/Blacklist Options</string>
-    <string name="pref_whiteblacklist_summary">Choose a different behavior to use the black and whitelist</string>
+	<string name="pref_whiteblacklist_title">DEPRECATED: Ignoring/Forcing Options</string>
+    <string name="pref_whiteblacklist_summary">Choose a different behavior to use the black and whitelist. (DEPRECATED: Always allow all apps, except those ignored)</string>
 	<string name="pref_force_snap_title">Autosnap windows</string>
-	<string name="pref_force_snap_summary">If new windows should automaticaly snap side by side</string>
-	<string name="pref_move_max_range_title">Minimal move to unsnap</string>
-	<string name="pref_move_max_range_summary">Set less to unsnap easier with ActionBar move or more to avoid unwanted unsnaps</string>
-    <string name="floating_flags">Floating flag system id</string>
-    <string name="floating_flags_summary">This flag is attached to windows so the systems knows their status.\nChoose the Old style to have old launchers working, but you will have infamous Chrome bug.\nNB: To use new flag your launcher must pass it instead of/with the old one.</string>
+	<string name="pref_force_snap_summary">If new windows should automaticaly snap side by side. (Not recommended, may have bugs)</string>
+	<string name="pref_move_max_range_title">Sensibility</string>
+	<string name="pref_move_max_range_summary">Set less to unsnap easier, more to avoid unwanted unsnaps</string>
+    <string name="floating_flags">DEPRECATED: Floating flag system id</string>
+    <string name="floating_flags_summary">This flag is attached to windows so the systems knows their status.\nChoose the Old style to have old launchers working, but you will have infamous Chrome bug.\nNB: To use new flag your launcher must pass it instead of/with the old one.\n(DEPRECATED: DesktopMode always uses new id)</string>
 
     <!-- 4rd Preference Screen -->
-    <string name="pref_movable_top_title">Movable &amp; Resizable</string>
+    <string name="pref_movable_top_title">Dragging</string>
     <string name="pref_movable_top_summary">A feature similar to multi-window for true multi-tasking.</string>
     <string name="pref_movable_sub_titlebar_title">TitleBar Settings</string>
     <string name="pref_movable_sub_titlebar_summary">Change Top TitleBar Behaviour</string>
@@ -134,23 +146,23 @@
     <string name="pref_movable_titlebar_size_title">TitleBar Size</string>
     <string name="pref_movable_titlebar_size_summary">Height of the titlebar</string>
     <string name="pref_movable_titlebar_separator_enabled_title">Enable TitleBar Separator Line</string>
-    <string name="pref_movable_titlebar_separator_enabled_summary">Show a separator line below the titlebar</string>
-    <string name="pref_movable_titlebar_separator_size_title">Separator Line Size</string>
-    <string name="pref_movable_titlebar_separator_size_summary">Height of the separator line below the titlebar</string>
-    <string name="pref_movable_titlebar_separator_color_title">Separator Line Color</string>
-    <string name="pref_movable_titlebar_separator_color_summary">The color of the separator line below the titlebar</string>
+    <string name="pref_movable_titlebar_separator_enabled_summary">Show a separator line below the titlebar (Beware, will be deprecated soon)</string>
+    <string name="pref_movable_titlebar_separator_size_title">Separator Line Size (Beware, will be deprecated soon)</string>
+    <string name="pref_movable_titlebar_separator_size_summary">Height of the separator line below the titlebar (Beware, will be deprecated soon)</string>
+    <string name="pref_movable_titlebar_separator_color_title">Separator Line Color (Beware, will be deprecated soon)</string>
+    <string name="pref_movable_titlebar_separator_color_summary">The color of the separator line below the titlebar (Beware, will be deprecated soon)</string>
     <string name="pref_movable_titlebar_alt_icons_title">Use Alternative Icons</string>
-    <string name="pref_movable_titlebar_alt_icons_summary">Changes the titlebar icons to the older version</string>
+    <string name="pref_movable_titlebar_alt_icons_summary">Changes the titlebar icons to the older version (Beware, will be deprecated soon)</string>
     <string name="pref_movable_titlebar_single_window_title">Treat Apps as Single Window</string>
     <string name="pref_movable_titlebar_single_window_summary">When enabled, the close button will close the entire app instead of that individual window.\n(Requires Android 4.1 and above)</string>
     <string name="pref_movable_titlebar_max_hide_title">Hide TitleBar when maximized</string>
-    <string name="pref_movable_titlebar_max_hide_summary">Hides the titlebar when maximized and show it again when resizing.</string>
+    <string name="pref_movable_titlebar_max_hide_summary">Hides the titlebar when maximized and show it again when resizing. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_moving_start_pos_title">Retain Window Position on Start</string>
-    <string name="pref_movable_moving_start_pos_summary">When opening a new window of the same app, place them in the same position and size of the original</string>
+    <string name="pref_movable_moving_start_pos_summary">When opening a new window of the same app, place them in the same position and size of the original.</string>
     <string name="pref_movable_moving_move_pos_title">Constant Window Position</string>
     <string name="pref_movable_moving_move_pos_summary">When resizing or moving a window, windows of the same app behind it will also be updated.</string>
     <string name="pref_movable_resizing_live_update_title">Live Resize Updating </string>
-    <string name="pref_movable_resizing_live_update_summary">When resizing windows, contents will refresh immediately instead of showing an outline.\n(May reduce performance)</string>
+    <string name="pref_movable_resizing_live_update_summary">When resizing windows, contents will refresh immediately instead of showing an outline.\n(Unstable, may reduce performance)</string>
     <string name="pref_movable_resizing_aero_snap_enabled_title">Snap-in Windows</string>
     <string name="pref_movable_resizing_aero_snap_enabled_summary">Drag a window to the any 4 edges of the screen to resize it to the respective half of the screen, similar to Aero Snap in Windows OS.</string>
     <string name="pref_movable_resizing_aero_snap_delay_title">Snap-in Delay</string>
@@ -162,53 +174,53 @@
     <string name="pref_movable_resizing_aero_snap_swipe_app_title">Swiping to next app</string>
     <string name="pref_movable_resizing_aero_snap_swipe_app_summary">When 2 or more windows are snapped to the same side of the screen, use 2 fingers to swipe left or right to switch between them.</string>
     <string name="pref_movable_resizing_aero_snap_titlebar_hide_title">Hide TitleBar when snapped</string>
-    <string name="pref_movable_resizing_aero_snap_titlebar_hide_summary">Hides the titlebar when snapping and show it again when unsnapping or resizing.\n(Requires Snap-in Windows to be enabled)</string>
+    <string name="pref_movable_resizing_aero_snap_titlebar_hide_summary">Hides the titlebar when snapping and show it again when unsnapping or resizing.\n(Requires Snap-in Windows to be enabled)\n (Beware, will be deprecated soon)</string>
     <string name="pref_movable_moving_move_ab_title">Allow ActionBar to Move</string>
     <string name="pref_movable_moving_move_ab_summary">Use the ActionBar (or the top area for apps with no ActionBar) to move windows. </string>
     <string name="pref_movable_triangle_enable_title">Show Triangle</string>
-    <string name="pref_movable_triangle_enable_summary">Show a triangle on the bottom left of the window for additional actions.</string>
+    <string name="pref_movable_triangle_enable_summary">Show a triangle on the bottom left of the window for additional actions. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_triangle_color_title">Triangle Color</string>
-    <string name="pref_movable_triangle_color_summary">Color of the corner triangle</string>
+    <string name="pref_movable_triangle_color_summary">Color of the corner triangle. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_triangle_alpha_title">Triangle Alpha</string>
-    <string name="pref_movable_triangle_alpha_summary">Transparency of the corner triangle</string>
+    <string name="pref_movable_triangle_alpha_summary">Transparency of the corner triangle. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_triangle_size_title">Triangle Size</string>
-    <string name="pref_movable_triangle_size_summary">Size of the corner triangle</string>
+    <string name="pref_movable_triangle_size_summary">Size of the corner triangle. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_triangle_sp_action_title">Triangle Single Press Action</string>
-    <string name="pref_movable_triangle_sp_action_summary">The action that will occur when clicking the corner triangle.</string>
+    <string name="pref_movable_triangle_sp_action_summary">The action that will occur when clicking the corner triangle. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_triangle_lp_action_title">Triangle Long Press Action</string>
-    <string name="pref_movable_triangle_lp_action_summary">The action that will occur when long pressing the corner triangle.</string>
+    <string name="pref_movable_triangle_lp_action_summary">The action that will occur when long pressing the corner triangle. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_quadrant_enable_title">Show Quadrant</string>
-    <string name="pref_movable_quadrant_enable_summary">Show a quadrant on the bottom right of the window for additional actions.</string>
+    <string name="pref_movable_quadrant_enable_summary">Show a quadrant on the bottom right of the window for additional actions. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_quadrant_color_title">Quadrant Color</string>
-    <string name="pref_movable_quadrant_color_summary">Color of the corner quadrant</string>
+    <string name="pref_movable_quadrant_color_summary">Color of the corner quadrant. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_quadrant_alpha_title">Quadrant Alpha</string>
-    <string name="pref_movable_quadrant_alpha_summary">Transparency of the corner quadrant</string>
+    <string name="pref_movable_quadrant_alpha_summary">Transparency of the corner quadrant. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_quadrant_size_title">Quadrant Size</string>
-    <string name="pref_movable_quadrant_size_summary">Size of the corner quadrant</string>
+    <string name="pref_movable_quadrant_size_summary">Size of the corner quadrant. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_quadrant_sp_action_title">Quadrant Single Press Action</string>
-    <string name="pref_movable_quadrant_sp_action_summary">The action that will occur when clicking the corner quadrant.</string>
+    <string name="pref_movable_quadrant_sp_action_summary">The action that will occur when clicking the corner quadrant. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_quadrant_lp_action_title">Quadrant Long Press Action</string>
-    <string name="pref_movable_quadrant_lp_action_summary">The action that will occur when long pressing the corner quadrant.</string>
+    <string name="pref_movable_quadrant_lp_action_summary">The action that will occur when long pressing the corner quadrant. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_resize_enabled_title">Enable Resizing</string>
-    <string name="pref_movable_resize_enabled_summary">Use to resize window when dragged.</string>
+    <string name="pref_movable_resize_enabled_summary">Use to resize window when dragged. (Changing this may cause bugs)</string>
     <string name="pref_movable_dragging_enabled_title">Enable Dragging</string>
-    <string name="pref_movable_dragging_enabled_summary">Use to move window when dragged.</string>
+    <string name="pref_movable_dragging_enabled_summary">Use to move window when dragged. (Changing this may cause bugs)</string>
     <string name="pref_movable_border_enable_title">Show Border</string>
-    <string name="pref_movable_border_enable_summary">Show a border around the edge of the window</string>
+    <string name="pref_movable_border_enable_summary">Show a border around the edge of the window.</string>
     <string name="pref_movable_border_color_title">Border Color</string>
-    <string name="pref_movable_border_color_summary">Color of the border</string>
+    <string name="pref_movable_border_color_summary">Color of the border. (Beware, will be deprecated soon)</string>
     <string name="pref_movable_border_thickness_title">Border Width</string>
-    <string name="pref_movable_border_thickness_summary">Thickness of the border in pixels</string>
-    <string name="pref_movable_others_minimize_to_statusbar_title">Minimize to Statusbar</string>
-    <string name="pref_movable_others_minimize_to_statusbar_summary">Show applications in statusbar when minimized.</string>
+    <string name="pref_movable_border_thickness_summary">Thickness of the border in pixels.</string>
+    <string name="pref_movable_others_minimize_to_statusbar_title">DEPRECATED: Minimize to Statusbar</string>
+    <string name="pref_movable_others_minimize_to_statusbar_summary">Show applications in statusbar when minimized. (DEPRECATED: Taskbar already provides this functionality)</string>
     <string name="pref_movable_others_tinted_title_enable_title">Colored TitleBar</string>
     <string name="pref_movable_others_tinted_title_enable_summary">Use the app\'s Primary Dark color for the titlebar.</string>
     <string name="pref_movable_others_tinted_title_hsv_title">Max HS[V] for black icons</string>
-    <string name="pref_movable_others_tinted_title_hsv_summary">Maximum HS[V] before auto-switching to black icons \n(Ignored when action bar has a custom text color)</string>
+    <string name="pref_movable_others_tinted_title_hsv_summary">Maximum HS[V] before auto-switching to black icons.\n(Ignored when action bar has a custom text color)\n(Beware, will be deprecated soon)</string>
     <string name="pref_movable_others_tinted_title_border_title">Tint Window Border</string>
-    <string name="pref_movable_others_tinted_title_border_summary">Change the window border (if enabled) to the titlebar color.</string>
+    <string name="pref_movable_others_tinted_title_border_summary">Change the window border (if enabled) to the titlebar color. (Will be permanently enabled soon)</string>
     <string name="pref_movable_others_tinted_title_corner_title">Tint Window Corners</string>
-    <string name="pref_movable_others_tinted_title_corner_summary">Change the triangle and quadrant (if enabled) to the titlebar color.</string>
+    <string name="pref_movable_others_tinted_title_corner_summary">Change the triangle and quadrant (if enabled) to the titlebar color. (Beware, will be deprecated soon)</string>
 
 
     <!-- 4th Preference Corner Actions -->
@@ -221,10 +233,10 @@
     <string name="option_movable_corner_maximize">Maximize App</string>
 
     <!-- 5th Preference Screen -->
-    <string name="pref_systemui_top_title">SystemUI Mods</string>
-    <string name="pref_systemui_top_summary">Collection of SystemUI modifications</string>
-    <string name="pref_systemui_top_summary_not_supported_lollipop">Not supported on Lollipop.</string>
-    <string name="pref_notif_warning">These mods are for AOSP-based ROMs and, thus, untested with other ROMs. If you experience continuous SystemUI force closes, immediately disable these mods.</string>
+    <string name="pref_systemui_top_title">DEPRECATED: SystemUI Mods</string>
+    <string name="pref_systemui_top_summary">Collection of SystemUI modifications. (DEPRECATED: MAY BREAK THE SYSTEM, CAUSE INSTABILITY, BOOTLOOPS, OVERHEATING (POTENTIALLY LEADING TO FIRE), AND EVEN BE HAZARDOUS. SERIOUSLY, WE ARE NOT KIDDING. PROCEED AT YOUR OWN RISK.)</string>
+    <string name="pref_systemui_top_summary_not_supported_lollipop">MAY BREAK THE SYSTEM, CAUSE INSTABILITY, BOOTLOOPS, OVERHEATING (POTENTIALLY LEADING TO FIRE), AND EVEN BE HAZARDOUS. SERIOUSLY, WE ARE NOT KIDDING. THE RISK INCREASES IF YOU RUN LOLLIPOP OR HIGHER. PROCEED AT YOUR OWN RISK.</string>
+    <string name="pref_notif_warning">These mods are for AOSP-based ROMs and, thus, untested with other ROMs. If you experience continuous SystemUI force closes, IMMEDIATELY disable these mods. It\'s for your own good.</string>
     <string name="pref_notif_long_click_title">Long Press Notification Option</string>
     <string name="pref_notif_long_click_summary">Adds \"Open in Halo\" option when long-pressing notifications.</string>
     <string name="pref_notif_single_click_title">Single Click Notification Halo</string>
@@ -241,16 +253,16 @@
     <!-- 6th Preference Screen -->
     <string name="pref_testing_top_title">Testing Area</string>
     <string name="pref_testing_top_summary">Test the opening of floating windows</string>
-    <string name="pref_testing_active_title">The module is active!</string>
-    <string name="pref_testing_active_subtitle">You should be able to launch apps in floating mode.</string>
-    <string name="pref_testing_inactive_title">The module is inactive</string>
-    <string name="pref_testing_inactive_subtitle">You should be unable to launch apps in floating mode.\n\nPlease try disabling &amp; enabling this module in Xposed Installer followed by another reboot.\n\n If that did not solve your issue, seek help in the official XHaloFloatingWindow thread below.</string>
-    <string name="pref_testing_unknown_subtitle">Unable to detect module loading</string>
-    <string name="pref_testing_launch_settings">Launch Settings in Halo</string>
-    <string name="pref_testing_launch_xinstaller">Launch Xposed Installer in Halo</string>
-    <string name="pref_testing_problem_title">Have a problem?</string>
-    <string name="pref_testing_problem_subtitle">You may visit the official thread on XDA Developers for help.</string>
-    <string name="pref_testing_launch_thread">Visit XDA Thread</string>
+    <string name="pref_testing_active_title">Module Active ✓</string>
+    <string name="pref_testing_active_subtitle">You should be able to launch standard apps in floating mode.</string>
+    <string name="pref_testing_inactive_title">Module Disabled :(</string>
+    <string name="pref_testing_inactive_subtitle">You will not be able to launch standard apps in floating mode.\n\nPlease try disabling and enabling this module in the Xposed Framework, and reboot.\n\n If that did not solve your issue, please report a bug below.</string>
+    <string name="pref_testing_unknown_subtitle">ERROR: Unable to determine if module is active. Please report the bug below.</string>
+    <string name="pref_testing_launch_settings">Launch Settings in a Floating window</string>
+    <string name="pref_testing_launch_xinstaller">Launch Xposed Installer in a Floating window.</string>
+    <string name="pref_testing_problem_title">Bug? Glitch? Suggestion?</string>
+    <string name="pref_testing_problem_subtitle">Please report any problem below. Feature requests welcome too!</string>
+    <string name="pref_testing_launch_thread">Report bug or suggestion</string>
 
 
     <!-- Whitelist / Blacklist Options-->
@@ -275,11 +287,13 @@
     <string name="tbic_theme_none_t">None</string>
     <string name="tbic_theme_none_s">Hide the entire titlebar</string>
     <string name="tbic_theme_original_t">Original Icons</string>
-    <string name="tbic_theme_original_s">The icons originally used in the very first version</string>
-    <string name="tbic_theme_clearer_t">Clearer Icons</string>
-    <string name="tbic_theme_clearer_s">Icons created by BachMinuetInG from XDA</string>
-	<string name="tbic_theme_ssnjr_t">Remix Icons</string>
-    <string name="tbic_theme_ssnjr_s">Icons created by SSNJR2002 from XDA</string>
+    <string name="tbic_theme_original_s">The icons originally used in XHaloFloatingWindow</string>
+    <string name="tbic_theme_win_t">Classic Desktop</string>
+    <string name="tbic_theme_win_s">Theme for those who prefer the classic icons found in a certain Operating System from a company in Redmond</string>
+    <string name="tbic_theme_clearer_t">Androidy</string>
+    <string name="tbic_theme_clearer_s">Theme using Material Icons from Google, embracing Google\'s new design philosophy for a stock, fresh experience</string>
+	<string name="tbic_theme_ssnjr_t">Nougaty</string>
+    <string name="tbic_theme_ssnjr_s">Theme based on some leaked new Nougat navbar icons, employing bold, solid icons for a modern experience</string>
 
     <!-- ColorPicker -->
     <string name="apply">Apply</string>
@@ -287,10 +301,10 @@
     <string name="color_hex">Color Hex</string>
 
     <!-- Notification Shade -->
-    <string name="notif_open_halo">Open in Halo</string>
-    <string name="notif_open_normal">Open Normally</string>
+    <string name="notif_open_halo">Open in a Floating window</string>
+    <string name="notif_open_normal">Open fullscreen</string>
     <string name="notif_app_info">App info</string>
-    <string name="notif_error_launching">There was an error launching the notification\nPlease report this to the XHFW thread:\n</string>
+    <string name="notif_error_launching">There was an error launching the notification\nPlease report this bug:\n</string>
 
     <!-- Recent Apps Screen -->
     <string name="recents_remove_from_list">Remove from list</string>
@@ -323,7 +337,7 @@
 	<string name="pref_floatdot_size_title">Floating Dots\' Size</string>
 	<string name="pref_floatdot_alpha_title">Transparency</string>
 	<string name="pref_floatdot_launcher_title">Enable FloatDot Launcher</string>
-    <string name="pref_floatdot_title">FloatDot settings</string>
+    <string name="pref_floatdot_title">DEPRECATED: FloatDot settings</string>
     <string name="floatdot_action_close">Close</string>
     <string name="floatdot_action_movable">Restart as movable</string>
     <string name="floatdot_action_fullscreen">Restart as fullscreen</string>
@@ -331,5 +345,6 @@
     <string name="floatdot_action_fav">Add to favs</string>
     <string name="floatdot_action_movable_top">Restart top app as movable</string>
     <string name="floatdot_action_fullscreen_top">Restart top app as fullscreen</string>
+    <string name="searchButton_search">Search</string>
 
 </resources>

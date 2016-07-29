@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:summary="">
-    <com.zst.xposed.halo.floatingwindow3.prefs.WidgetNumberPicker
+    <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
             defaultValue="26"
             maximum="120"
             minimum="10"
             android:key="floatdot_size"
             android:title="@string/pref_floatdot_size_title" />
-    <com.zst.xposed.halo.floatingwindow3.prefs.WidgetFloatPercentage
+    <com.jpos.desktopmode.ext.fw.prefs.WidgetFloatPercentage
 		defaultValue="0.7"
 		maximum="1"
 		minimum="0"
@@ -19,12 +19,12 @@
 		android:summary="@string/pref_floatdot_single_color_snap_summary"
 		android:disableDependentsState="true"
 	/>
-	<com.zst.xposed.halo.floatingwindow3.prefs.ColorPicker
+	<com.jpos.desktopmode.ext.fw.prefs.ColorPicker
 		defaultValue="000000"
 		android:key="floatdot_color_outer1"
 		android:summary=""
 		android:title="@string/floatdot_color_outer1_title" />
-	<com.zst.xposed.halo.floatingwindow3.prefs.ColorPicker
+	<com.jpos.desktopmode.ext.fw.prefs.ColorPicker
 		defaultValue="008080"
 		android:dependency="floatdot_single_color_snap"
 		android:key="floatdot_color_inner1"
@@ -43,12 +43,12 @@
 		android:summary="@string/pref_floatdot_single_color_launcher_summary"
 		android:disableDependentsState="true"
 	/>
-	<com.zst.xposed.halo.floatingwindow3.prefs.ColorPicker
+	<com.jpos.desktopmode.ext.fw.prefs.ColorPicker
 		defaultValue="000000"
 		android:key="floatdot_color_outer2"
 		android:summary=""
 		android:title="@string/floatdot_color_outer2_title" />
-	<com.zst.xposed.halo.floatingwindow3.prefs.ColorPicker
+	<com.jpos.desktopmode.ext.fw.prefs.ColorPicker
 		defaultValue="00FF00"
 		android:dependency="floatdot_single_color_launcher"
 		android:key="floatdot_color_inner2"

@@ -8,7 +8,7 @@
 		android:key="window_moving_move_ab_enabled"
 		android:summary="Drag windows by actionbar"
 		android:title="Actionbar to move" />
-	<com.zst.xposed.halo.floatingwindow3.prefs.WidgetNumberPicker
+	<com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
         defaultValue="50"
         maximum="150"
         minimum="0"

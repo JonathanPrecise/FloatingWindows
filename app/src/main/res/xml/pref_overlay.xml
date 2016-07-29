@@ -4,7 +4,7 @@
 	
 
     <PreferenceCategory android:title="Titlebar">
-        <com.zst.xposed.halo.floatingwindow3.prefs.WidgetNumberPicker
+        <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
             defaultValue="32"
             maximum="120"
             minimum="0"
@@ -16,7 +16,7 @@
             android:key="window_moving_titlebar_separator_enabled"
             android:summary="@string/pref_movable_titlebar_separator_enabled_summary"
             android:title="@string/pref_movable_titlebar_separator_enabled_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.WidgetNumberPicker
+        <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
             defaultValue="2"
             maximum="120"
             minimum="0"
@@ -24,7 +24,7 @@
             android:key="window_moving_titlebar_separator_size"
             android:summary="@string/pref_movable_titlebar_separator_size_summary"
             android:title="@string/pref_movable_titlebar_separator_size_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.ColorPicker
+        <com.jpos.desktopmode.ext.fw.prefs.ColorPicker
             defaultValue="FFFFFF"
             android:dependency="window_moving_titlebar_separator_enabled"
             android:key="window_moving_titlebar_separator_color"
@@ -70,13 +70,13 @@
             android:key="window_triangle_dragging_enabled"
             android:summary="@string/pref_movable_dragging_enabled_summary"
             android:title="@string/pref_movable_dragging_enabled_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.ColorPicker
+        <com.jpos.desktopmode.ext.fw.prefs.ColorPicker
             defaultValue="FFFFFF"
             android:dependency="window_triangle_enabled"
             android:key="window_triangle_color"
             android:summary="@string/pref_movable_triangle_color_summary"
             android:title="@string/pref_movable_triangle_color_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.WidgetFloatPercentage
+        <com.jpos.desktopmode.ext.fw.prefs.WidgetFloatPercentage
             defaultValue="0.5"
             maximum="1"
             minimum="0"
@@ -84,7 +84,7 @@
             android:key="window_triangle_alpha"
             android:summary="@string/pref_movable_triangle_alpha_summary"
             android:title="@string/pref_movable_triangle_alpha_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.WidgetNumberPicker
+        <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
             defaultValue="36"
             maximum="100"
             minimum="1"
@@ -128,13 +128,13 @@
             android:key="window_quadrant_dragging_enabled"
             android:summary="@string/pref_movable_dragging_enabled_summary"
             android:title="@string/pref_movable_dragging_enabled_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.ColorPicker
+        <com.jpos.desktopmode.ext.fw.prefs.ColorPicker
             defaultValue="FFFFFF"
             android:dependency="window_quadrant_enabled"
             android:key="window_quadrant_color"
             android:summary="@string/pref_movable_quadrant_color_summary"
             android:title="@string/pref_movable_quadrant_color_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.WidgetFloatPercentage
+        <com.jpos.desktopmode.ext.fw.prefs.WidgetFloatPercentage
             defaultValue="0.5"
             maximum="1"
             minimum="0"
@@ -142,7 +142,7 @@
             android:key="window_quadrant_alpha"
             android:summary="@string/pref_movable_quadrant_alpha_summary"
             android:title="@string/pref_movable_quadrant_alpha_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.WidgetNumberPicker
+        <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
             defaultValue="36"
             maximum="100"
             minimum="1"
@@ -173,13 +173,13 @@
             android:key="window_border_enabled"
             android:summary="@string/pref_movable_border_enable_summary"
             android:title="@string/pref_movable_border_enable_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.ColorPicker
+        <com.jpos.desktopmode.ext.fw.prefs.ColorPicker
             defaultValue="000000"
             android:dependency="window_border_enabled"
             android:key="window_border_color"
             android:summary="@string/pref_movable_border_color_summary"
             android:title="@string/pref_movable_border_color_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.WidgetNumberPicker
+        <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
             defaultValue="0"
             maximum="100"
             minimum="0"

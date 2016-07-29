@@ -50,9 +50,9 @@
     </string-array>
 
     <string-array name="option_floating_flags">
-        <item>Old and classic (0x2000)</item>
-        <item>New default / Android 5+ (0x2001)</item>
-        <item>Omni/SlimRom (0x3000)</item>
+        <item>Legacy mode, not compatible with DesktopMode</item>
+        <item>DesktopMode</item>
+        <item>Omni/SlimRom mode (DesktopMode compatible) (0x3000)</item>
     </string-array>
 
     <string-array name="option_floating_flags_values">

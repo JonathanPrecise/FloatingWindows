@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zst.xposed.halo.floatingwindow3"
-    android:installLocation="internalOnly"
-    android:versionCode="319"
-    android:versionName="3.19">
+	xmlns:tools="http://schemas.android.com/tools"
+	package="com.jpos.desktopmode.ext.fw"
+    android:installLocation="internalOnly">
+    <!--android:versionCode="1"
+    android:versionName="0.1-alpha0"-->
 
-	<uses-sdk
-        android:minSdkVersion="17"
-        android:targetSdkVersion="21" />
+	<!--uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="24" /-->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.REORDER_TASKS" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-	<uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+	<uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+		tools:ignore="ProtectedPermissions" />
 	
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+		tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <meta-data
             android:name="xposedmodule"
             android:value="true" />
@@ -26,11 +29,12 @@
             android:value="52" />
         <meta-data
             android:name="xposeddescription"
-            android:value="xHaloFloatingWindow resurrection edition" />
+            android:value="Desktop Mode Floating Windows, based on XHFW3, which itself is based on XHaloFloatingWindow" />
 
         <activity
-            android:name=".MainPreference"
-            android:label="@string/app_name" >
+            android:name="com.jpos.desktopmode.ext.fw.MainPreference"
+			android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/launcher_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,58 +42,42 @@
             </intent-filter>
         </activity>
 		<activity
-            android:name="com.zst.xposed.halo.floatingwindow3.prefs.BlacklistActivity"
-            android:label="@string/app_blacklist" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.zst.xposed.halo.floatingwindow3.prefs.WhitelistActivity"
-            android:label="@string/app_whitelist" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-		<activity
-            android:name="com.zst.xposed.halo.floatingwindow3.prefs.MaximizedActivity"
-            android:label="@string/app_maximized" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-		<activity
-            android:name="com.zst.xposed.halo.floatingwindow3.prefs.TitleBarSettingsActivity"
+            android:name="com.jpos.desktopmode.ext.fw.prefs.TitleBarSettingsActivity"
+			android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
             android:label="@string/pref_movable_sub_titlebar_title" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 		<activity
-			android:name="com.zst.xposed.halo.floatingwindow3.prefs.FloatDotActivity"
+			android:name="com.jpos.desktopmode.ext.fw.prefs.FloatDotActivity"
+			android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
 			android:label="@string/pref_floatdot_title" >
 		<intent-filter>
 			<action android:name="android.intent.action.MAIN" />
 		</intent-filter>
         </activity>
 		<activity
-			android:name="com.zst.xposed.halo.floatingwindow3.prefs.LauncherListActivity"
+			android:name="com.jpos.desktopmode.ext.fw.prefs.LauncherListActivity"
+			android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
 			android:label="@string/pref_launcher_title" >
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 			</intent-filter>
         </activity>
-		<receiver android:name="com.zst.xposed.halo.floatingwindow3.floatdot.BootReceiver">  
+		<receiver android:name="com.jpos.desktopmode.ext.fw.floatdot.BootReceiver">
 			<intent-filter>  
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 			</intent-filter>  
 		</receiver>
-		<receiver android:name="com.zst.xposed.halo.floatingwindow3.floatdot.CallReceiver">  
+		<receiver android:name="com.jpos.desktopmode.ext.fw.floatdot.CallReceiver"
+			tools:ignore="ExportedReceiver">
 			<intent-filter>
 				<action android:name="persistent.XHFWService" />
 			</intent-filter>  
 		</receiver>
-		<service android:name="com.zst.xposed.halo.floatingwindow3.floatdot.XHFWService" android:process=":remote" >
+		<service android:name="com.jpos.desktopmode.ext.fw.floatdot.XHFWService" android:process=":remote"
+			tools:ignore="ExportedService">
 			<intent-filter>
 				<action android:name="service.XHFWService" />
 			</intent-filter>

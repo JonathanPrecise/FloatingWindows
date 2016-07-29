@@ -3,7 +3,7 @@
     android:title="@string/pref_behavior_title">
 	
 	<PreferenceCategory android:title="Apps startup">
-		<Preference
+		<!--Preference
             android:key="window_whitelist"
             android:summary="@string/pref_whitelist_summary"
             android:title="@string/pref_whitelist_title" />
@@ -14,20 +14,20 @@
 		<Preference
             android:key="window_maximized"
             android:summary="@string/pref_maximized_summary"
-            android:title="@string/pref_maximized_title" />
-        <ListPreference
+            android:title="@string/pref_maximized_title" /-->
+        <!--ListPreference
             android:defaultValue="0"
             android:entries="@array/option_whiteblacklist_entries"
             android:entryValues="@array/option_whiteblacklist_values"
             android:key="window_whiteblacklist_options"
             android:summary="@string/pref_whiteblacklist_summary"
-            android:title="@string/pref_whiteblacklist_title" />
+            android:title="@string/pref_whiteblacklist_title" /-->
 		<CheckBoxPreference
             android:defaultValue="false"
             android:key="window_force_open_app_above_halo"
             android:summary="@string/pref_force_open_app_above_halo_summary"
             android:title="@string/pref_force_open_app_above_halo_title" />
-		<com.zst.xposed.halo.floatingwindow3.prefs.IntListPreference
+		<com.jpos.desktopmode.ext.fw.prefs.IntListPreference
             android:defaultValue="0"
             android:entries="@array/option_force_snap_entries"
             android:entryValues="@array/option_force_snap_values"
@@ -41,7 +41,7 @@
             android:summary="@string/pref_keyboard_summary"
             android:title="@string/pref_keyboard_title" />
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="window_show_recents"
             android:summary="@string/pref_show_recents_summary"
             android:title="@string/pref_show_recents_title" />
@@ -52,13 +52,13 @@
             android:summary="@string/pref_force_recents_summary"
             android:title="@string/pref_force_recents_title" />
 		<SwitchPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="system_app_pausing"
             android:summaryOff="@string/pref_app_pause_summary_off"
             android:summaryOn="@string/pref_app_pause_summary_on"
             android:title="@string/pref_app_pause_title" />
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="window_minimize_to_statusbar"
             android:summary="@string/pref_movable_others_minimize_to_statusbar_summary"
             android:title="@string/pref_movable_others_minimize_to_statusbar_title" />
@@ -69,7 +69,8 @@
             android:key="window_resizing_aero_snap_enabled"
             android:summary="@string/pref_movable_resizing_aero_snap_enabled_summary"
             android:title="@string/pref_movable_resizing_aero_snap_enabled_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.WidgetNumberPicker
+        <!--suppress AndroidUnknownAttribute -->
+		<com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
             defaultValue="1000"
             maximum="10000"
             minimum="1"
@@ -83,7 +84,7 @@
             android:key="aero_focus_frame"
             android:summary="@string/pref_aero_focus_frame_summary"
             android:title="@string/pref_aero_focus_frame_title" />
-        <com.zst.xposed.halo.floatingwindow3.prefs.ColorPicker
+        <com.jpos.desktopmode.ext.fw.prefs.ColorPicker
             defaultValue="33b5e5"
             android:key="aero_focus_frame_color"
             android:summary="@string/pref_aero_focus_frame_color_summary"
