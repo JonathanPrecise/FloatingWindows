@@ -37,4 +37,4 @@ Completely welcome! **However**, they are not *recommended*, as this is still in
 Apache 2.0 License, as seen in the LICENSE file.
 
 ## Spread the word
-Thank you! Please [follow us](https://twitter.com/JonoApps/)! on Twitter!
+Thank you! Please [follow us](https://twitter.com/JonoApps/) on Twitter!
