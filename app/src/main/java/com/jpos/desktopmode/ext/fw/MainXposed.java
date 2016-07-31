@@ -19,13 +19,22 @@ public class MainXposed implements IXposedHookLoadPackage, IXposedHookZygoteInit
     public static XSharedPreferences mPackagesList = null;
     public static Compatibility.Hooks mCompatibility =  new Compatibility.Hooks();
 
+    /**
+     *
+     * @param startupParam
+     * @throws Throwable
+     */
     @Override
     public void initZygote(StartupParam startupParam) throws Throwable {
-//		mPref = new XSharedPreferences(Common.THIS_MOD_PACKAGE_NAME, Common.PREFERENCE_MAIN_FILE);
-//		mPref.makeWorldReadable();
-//		mPackagesList = new XSharedPreferences(
-//          Common.THIS_MOD_PACKAGE_NAME, Common.PREFERENCE_PACKAGES_FILE);
-//		mPackagesList.makeWorldReadable();
+        /*
+
+        mPref = new XSharedPreferences(Common.THIS_MOD_PACKAGE_NAME, Common.PREFERENCE_MAIN_FILE);
+        mPref.makeWorldReadable();
+        mPackagesList = new XSharedPreferences(
+        Common.THIS_MOD_PACKAGE_NAME, Common.PREFERENCE_PACKAGES_FILE);
+        mPackagesList.makeWorldReadable();
+
+        */
         try{
         //if(sModRes==null)
             sModRes = XModuleResources.createInstance(startupParam.modulePath, null);
