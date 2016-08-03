@@ -17,11 +17,10 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.res.Configuration;
 import android.os.Build;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -39,10 +38,15 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 /**
  * Created by andrey on 21.04.16.
+ * Modified by Jonathan Precise on 27.07.16
  */
 
+@SuppressLint("StaticFieldLeak")
+@SuppressWarnings("WeakerAccess")
 public class MovableWindow
 {
+
+    private static boolean isResumed = true;
 
     public static void DEBUG(String tag){
         XposedBridge.log(tag + " Package:[" + (mWindowHolder==null?"null":mWindowHolder.packageName + "] isSnapped: [" + mWindowHolder.isSnapped 
@@ -105,6 +109,12 @@ public class MovableWindow
     static final int ID_NOTIFICATION_RESTORE = 22222222;
     static final String INTENT_APP_PKG = "pkg";
 
+    public static final int uiOpts = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+
 
     public static void hookActivity(final XC_LoadPackage.LoadPackageParam lpparam){
 
@@ -114,8 +124,20 @@ public class MovableWindow
 
                 DEBUG("onCreate start ");
                 mCurrentActivity = (Activity) param.thisObject;
-                isMovable =  isMovable ||
-                       (Util.isFlag(mCurrentActivity.getIntent().getFlags(), MainXposed.mPref.getInt(Common.KEY_FLOATING_FLAG, Common.FLAG_FLOATING_WINDOW)));
+
+                isMovable =
+                        (isMovable ||
+                                (Util.isFlag
+                                        (
+                                                mCurrentActivity.getIntent().getFlags(),
+                                                MainXposed.mPref.getInt(
+                                                        Common.KEY_FLOATING_FLAG,
+                                                        Common.FLAG_FLOATING_WINDOW
+                                                )
+                                        )
+                                )
+                        ) && ((!lpparam.packageName.equals("com.jonathan.desktopmode")) &&
+                                (!lpparam.packageName.equals("gravitybox")));
                 if(!mRestartReceiverRegistered)
                     mRestartReceiverRegistered = registerRestartBroadcastReceiver(mCurrentActivity);
                 if(!isMovable){
@@ -158,6 +180,7 @@ public class MovableWindow
                 @Override
                 protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                     DEBUG("onResumeSTART");
+                    isResumed = true;
                     if(!isMovable || mWindowHolder == null) {
                         toggleDragger((Activity) param.thisObject, false);
                         return;
@@ -171,8 +194,28 @@ public class MovableWindow
                     /* fix evernote layout */
                     if(mWindowHolder.packageName.equals("com.evernote"))
                         mWindowHolder.syncLayoutForce();
-                     else
-                         pushLayout();
+                    else
+                        pushLayout();
+
+                    final Activity activity = (Activity) param.thisObject;
+
+                    activity.getWindow().getDecorView()
+                            .setSystemUiVisibility(uiOpts);
+
+                    //noinspection AnonymousInnerClassMayBeStatic
+                    new Handler().postDelayed(
+                            new Runnable() {
+                                @Override
+                                public void run() {
+                                    activity.getWindow().getDecorView()
+                                            .setSystemUiVisibility(uiOpts);
+                                    if (isResumed) {
+                                        new Handler().postDelayed(this, 2000);
+                                    }
+                                }
+                            },
+                            2000
+                    );
 
                     toggleDragger();
                     DEBUG("onResumeEND");
@@ -180,23 +223,28 @@ public class MovableWindow
             });
 
         XposedBridge.hookAllMethods(Activity.class, "onPause", new XC_MethodHook() {
-                @Override
-                protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                    if(!isMovable || mWindowHolder==null) return;
-                    DEBUG("onPause mWindows.size:" + mWindowHolder.mWindows.size());
-                    Activity mActivity = (Activity) param.thisObject;
-                    hideFocusFrame(mActivity.getApplicationContext());
 
-//					isMovable = /* isMovable || */
-//						(Util.isFlag(mActivity.getIntent().getFlags(), MainXposed.mPref.getInt(Common.KEY_FLOATING_FLAG, Common.FLAG_FLOATING_WINDOW)));
-//					if(!isMovable) {
-//						mWindowHolder=null;
-//					}
-                    return;
+            @Override
+            protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                if(!isMovable || mWindowHolder==null) return;
+                //noinspection AccessStaticViaInstance
+                DEBUG("onPause mWindows.size:" + mWindowHolder.mWindows.size());
+                Activity mActivity = (Activity) param.thisObject;
+                hideFocusFrame(mActivity.getApplicationContext());
+
+//				isMovable = /* isMovable || */
+//					(Util.isFlag(mActivity.getIntent().getFlags(), MainXposed.mPref.getInt(Common.KEY_FLOATING_FLAG, Common.FLAG_FLOATING_WINDOW)));
+//				if(!isMovable) {
+//					mWindowHolder=null;
+//				}
+
+                isResumed = false;
+                return;
                 }
             });
 
         XposedBridge.hookAllMethods(Activity.class, "onDestroy", new XC_MethodHook() {
+                @SuppressWarnings("AccessStaticViaInstance")
                 @Override
                 protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                     DEBUG("onDestroy mWindows.size:" + mWindowHolder.mWindows.size());
@@ -206,10 +254,12 @@ public class MovableWindow
                     if(mWindowHolder.mWindows.size()<1) {
                         sendRemovedPackageInfo(mWindowHolder.packageName, (Activity)param.thisObject, false);
                         //mWindowHolder.mActivity.getApplicationContext().unbindService(XHFWServiceConnection);
+                        //noinspection AssignmentToNull
                         mWindowHolder = null;
                         isMovable=false;
                     }
                     hideFocusFrame(((Activity)param.thisObject).getApplicationContext());
+
                     return;
                 }
             });
@@ -252,14 +302,18 @@ public class MovableWindow
 //					}
 //					});
 
-
         XposedBridge.hookAllMethods(Activity.class, "dispatchTouchEvent", new XC_MethodHook() {
                 @Override
                 protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                    if(!isMovable||mWindowHolder==null) return;
+                    if(!isMovable||mWindowHolder==null) {
+                        XposedBridge.log("Ain't movable, exiting...");
+                        return;
+                    }
 
+                    //noinspection SpellCheckingInspection
                     Activity a = (Activity) param.thisObject;
-                    AppCompatActivity acompat = (AppCompatActivity) param.thisObject;
+
+                    //noinspection ConstantConditions
                     mWindowHolder.setWindow(a);
                     MotionEvent event = (MotionEvent) param.args[0];
                     switch (event.getAction()) {
@@ -271,36 +325,15 @@ public class MovableWindow
                                 mPreviousRange[1] = event.getRawY();
                                 mChangedPreviousRange = true;
                             }
+                            //noinspection ConstantConditions
                             changeFocusApp(a);
                             break;
                         case MotionEvent.ACTION_MOVE:
                             if (mActionBarDraggable) {
-                                ActionBar ab = null;
-                                android.support.v7.app.ActionBar abcompat = null;
-                                boolean useAppCompat;
-
-                                try {
-                                    Log.d(Common.LOG_TAG, "beforeHookedMethod: Trying SupportActionBar");
-                                    abcompat = acompat.getSupportActionBar();
-                                    if (abcompat == null) {
-                                        throw new NullPointerException("SupportActionBar is null");
-                                    }
-                                    Log.d(Common.LOG_TAG, "beforeHookedMethod: [OK] SupportActionBar");
-                                    useAppCompat = true;
-                                } catch (Exception ex) {
-                                    Log.d(Common.LOG_TAG, "beforeHookedMethod: [FAIL] SupportActionBar");
-                                    useAppCompat = false;
-                                    Log.d(Common.LOG_TAG, "beforeHookedMethod: Using ActionBar");
-                                    ab = a.getActionBar();
-                                    Log.d(Common.LOG_TAG, "beforeHookedMethod: [OK] ActionBar");
-                                }
+                                ActionBar ab = a.getActionBar();
 
                                 int height;
-                                if (useAppCompat) {
-                                    height = abcompat.getHeight();
-                                } else {
-                                    height = (ab != null) ? ab.getHeight() : Util.dp(48, a.getApplicationContext());
-                                }
+                                height = (ab != null) ? ab.getHeight() : Util.dp(48, a.getApplicationContext());
 
                                 if (viewY < height) {
                                     screenX = event.getRawX();
@@ -331,18 +364,18 @@ public class MovableWindow
                 }
             });
 
-        try
-        {
+        try {
             injectGenerateLayout(lpparam);
+        } catch (Throwable e) {
+            XposedBridge.log(e);
         }
-        catch (Throwable e)
-        {}
     }
 
     private static void injectGenerateLayout(final XC_LoadPackage.LoadPackageParam lpparam)
     throws Throwable {
         Class<?> cls = null;
         try{
+            //noinspection AccessStaticViaInstance
             cls = XposedHelpers.findClass(MainXposed.mCompatibility.Internal_PhoneWindow, lpparam.classLoader);
         } catch(Throwable t){
             XposedBridge.log(t);
@@ -540,8 +573,8 @@ public class MovableWindow
 
     public static void showTitleBar(boolean show){
         DEBUG("showTitleBar " + show);
-            mOverlayView.setTitleBarVisibility(show);
-        }
+        mOverlayView.setTitleBarVisibility(show);
+    }
 
     public static void setOverlayView(){
         DEBUG("setOverlayView");

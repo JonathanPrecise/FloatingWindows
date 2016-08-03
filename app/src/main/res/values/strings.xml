@@ -4,10 +4,10 @@
     <string name="app_name">FloatWin Extension for DesktopMode</string>
     <string name="launcher_name">FloatWin Settings</string>
     <string name="hello_world">Hello world!</string>
-	<string name="app_description">Floating Windows extension for rooted Desktop Mode users</string>
+    <string name="app_description">Floating Windows extension for rooted Desktop Mode users</string>
     <string name="app_blacklist">Ignored apps</string>
     <string name="app_whitelist">Forced apps</string>
-	<string name="app_maximized">Maximized apps</string>
+    <string name="app_maximized">Maximized apps</string>
     <string name="app_testing">Testing</string>
     <string name="app_statusbar_taskbar">Statusbar Taskbar</string>
 
@@ -22,7 +22,7 @@
     <string name="app_firstruninstructions_positive">Download</string>
     <string name="app_firstruninstructions_negative">Enable</string>
 
-	<!-- Gravity -->
+    <!-- Gravity -->
     <string name="option_gravity_1">Top Left Corner</string>
     <string name="option_gravity_2">Top Center</string>
     <string name="option_gravity_3">Top Right Corner</string>
@@ -32,8 +32,8 @@
     <string name="option_gravity_7">Bottom Left Corner</string>
     <string name="option_gravity_8">Bottom Center</string>
     <string name="option_gravity_9">Bottom Right Corner</string>
-	
-	<!-- Drag & Move Bar -->
+
+    <!-- Drag & Move Bar -->
     <string name="dnm_title">Drag To Move</string>
     <string name="dnm_transparency">Transparency</string>
     <string name="dnm_close_app">Close Window</string>
@@ -49,7 +49,7 @@
     <string name="dnm_snap_window_sub8">Snap (Bottom Right)</string>
     <string name="dnm_minimize_notif_title">Restore %1$s</string>
     <string name="dnm_minimize_notif_summary">This floating app has been minimized</string>
-	<!-- Preference Strings -->
+    <!-- Preference Strings -->
     <string name="default_value">Default Value</string>
     <string name="save">Save</string>
     <string name="add">Add</string>
@@ -57,7 +57,7 @@
     <string name="close_once">Remind me later</string>
     <string name="close_forever">@android:string/ok</string>
 
-	<string name="pref_main_top_title">General</string>
+    <string name="pref_main_top_title">General</string>
     <!-- First Preference Screen -->
     <string name="pref_window_top_title">Popup Window</string>
     <string name="pref_window_top_summary">Customize Window Properties</string>
@@ -67,8 +67,8 @@
     <string name="pref_dim_summary">Background Dimming of Popup</string>
     <string name="pref_gravity_title">Popup position</string>
     <string name="pref_gravity_summary">Position of the Popup</string>
-	<string name="pref_behavior_title">Window</string>
-	<string name="pref_overlay_title">Titlebar</string>
+    <string name="pref_behavior_title">Window</string>
+    <string name="pref_overlay_title">Titlebar</string>
 
     <!-- 2nd Preference Screen -->
     <string name="pref_size_top_title">Popup Size</string>
@@ -81,7 +81,7 @@
     <string name="pref_width_landscape_summary">Width of Popup in Landscape</string>
     <string name="pref_height_landscape_title">Landscape Height</string>
     <string name="pref_height_landscape_summary">Height of Popup in Landscape</string>
-	<string name="pref_all_maximized_title">Start All Movable Windows Maximized</string>
+    <string name="pref_all_maximized_title">Start All Movable Windows Maximized</string>
     <string name="pref_all_maximized_summary">Maximize everything from start</string>
 
     <!-- 3rd Preference Screen -->
@@ -100,8 +100,8 @@
     <string name="pref_force_recents_summary">Force the app to be shown in recents screen, regardless of the app\'s configuration. (Not recommended)</string>
     <string name="pref_force_open_app_above_halo_title">Force New Windows to open in floating mode</string>
     <string name="pref_force_open_app_above_halo_summary">If an app is currently open in floating mode, new apps that open above it are forced to open in floating mode. (Recommended)</string>
-	<string name="pref_force_open_alt_gravity_title">Force new windows snap side by side</string>
-	<string name="pref_force_open_alt_gravity_summary">No floating apps on start, just AeroSnaps</string>
+    <string name="pref_force_open_alt_gravity_title">Force new windows snap side by side</string>
+    <string name="pref_force_open_alt_gravity_summary">No floating apps on start, just AeroSnaps</string>
     <string name="pref_blacklist_title">Ignore Apps</string>
     <string name="pref_blacklist_summary">Choose a list of apps to never open in floating mode. (Use in case the app doesn\'t work in floating mode)</string>
     <string name="pref_blacklist_dialog">Newly ignored apps needs to be force-closed for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.</string>
@@ -109,18 +109,18 @@
     <string name="pref_whitelist_title">Force Apps</string>
     <string name="pref_whitelist_summary">Choose a list of apps to always open in floating mode</string>
     <string name="pref_whitelist_dialog">Newly added apps needs to be force-closed for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.\n\nNote that ignoring has a higher priority over forcing if you were to select the same app in both lists.</string>
-	<string name="pref_maximized_title">Maximized Apps</string>
+    <string name="pref_maximized_title">Maximized Apps</string>
     <string name="pref_maximized_summary">Choose a list of apps to always open maximized</string>
     <string name="pref_maximized_dialog">Newly auto maximized apps need to be force-closed for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.</string>
-	<string name="pref_launcher_title">DEPRECATED: FloatDot Launcher Apps</string>
+    <string name="pref_launcher_title">DEPRECATED: FloatDot Launcher Apps</string>
     <string name="pref_launcher_summary">Choose a list of apps to show in launcher menu. (DEPRECATED: FloatDot Launcher is not relevant to Desktop Mode)</string>
     <string name="pref_launcher_dialog">To reopen apps as movable you might need to force-close them for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.</string>
-	<string name="pref_whiteblacklist_title">DEPRECATED: Ignoring/Forcing Options</string>
+    <string name="pref_whiteblacklist_title">DEPRECATED: Ignoring/Forcing Options</string>
     <string name="pref_whiteblacklist_summary">Choose a different behavior to use the black and whitelist. (DEPRECATED: Always allow all apps, except those ignored)</string>
-	<string name="pref_force_snap_title">Autosnap windows</string>
-	<string name="pref_force_snap_summary">If new windows should automaticaly snap side by side. (Not recommended, may have bugs)</string>
-	<string name="pref_move_max_range_title">Sensibility</string>
-	<string name="pref_move_max_range_summary">Set less to unsnap easier, more to avoid unwanted unsnaps</string>
+    <string name="pref_force_snap_title">Autosnap windows</string>
+    <string name="pref_force_snap_summary">If new windows should automaticaly snap side by side. (Not recommended, may have bugs)</string>
+    <string name="pref_move_max_range_title">Sensibility</string>
+    <string name="pref_move_max_range_summary">Set less to unsnap easier, more to avoid unwanted unsnaps</string>
     <string name="floating_flags">DEPRECATED: Floating flag system id</string>
     <string name="floating_flags_summary">This flag is attached to windows so the systems knows their status.\nChoose the Old style to have old launchers working, but you will have infamous Chrome bug.\nNB: To use new flag your launcher must pass it instead of/with the old one.\n(DEPRECATED: DesktopMode always uses new id)</string>
 
@@ -270,10 +270,10 @@
     <string name="option_whiteblacklist_always_only">Always open apps in halo except blacklisted apps</string>
     <string name="option_whiteblacklist_never_only">Never open apps in halo but force whitelisted apps in halo</string>
     <string name="option_whiteblacklist_never_all">Blacklist all apps &amp; only allow whitelisted apps to be opened in halo</string>
-	
-	<string name="option_force_snap_default">Do not autosnap</string>
-	<string name="option_force_snap_halo_only">Autosnap over movable windows only</string>
-	<string name="option_force_snap_always">Always autosnap</string>
+
+    <string name="option_force_snap_default">Do not autosnap</string>
+    <string name="option_force_snap_halo_only">Autosnap over movable windows only</string>
+    <string name="option_force_snap_always">Always autosnap</string>
 
     <!-- Keyboard Mode -->
     <string name="keyboard_default">Default</string>
@@ -292,7 +292,7 @@
     <string name="tbic_theme_win_s">Theme for those who prefer the classic icons found in a certain Operating System from a company in Redmond</string>
     <string name="tbic_theme_clearer_t">Androidy</string>
     <string name="tbic_theme_clearer_s">Theme using Material Icons from Google, embracing Google\'s new design philosophy for a stock, fresh experience</string>
-	<string name="tbic_theme_ssnjr_t">Nougaty</string>
+    <string name="tbic_theme_ssnjr_t">Nougaty</string>
     <string name="tbic_theme_ssnjr_s">Theme based on some leaked new Nougat navbar icons, employing bold, solid icons for a modern experience</string>
 
     <!-- ColorPicker -->
@@ -324,19 +324,19 @@
     <string name="pref_statusbar_taskbar_pin_apps_title">Pin Apps</string>
     <string name="pref_statusbar_taskbar_number_summary">Choose the maximum applications to be show in the notification\n(Requires SystemUI restart)</string>
     <string name="pref_statusbar_taskbar_number_title">Max Number of Apps</string>
-	
-	<!-- FloatDot -->
-	<string name="floatdot_color_outer1_title">FloatDot Snap Color</string>
-	<string name="floatdot_color_inner1_title">FloatDot Snap Inner Color</string>
-	<string name="floatdot_color_outer2_title">FloatDot Launcher Color</string>
-	<string name="floatdot_color_inner2_title">FloatDot Launcher Inner Color</string>
-	<string name="pref_floatdot_single_color_snap_title">Single Color for FloatDot Snap</string>
-	<string name="pref_floatdot_single_color_snap_summary">Do not use double circles</string>
-	<string name="pref_floatdot_single_color_launcher_title">Single Color for FloatDot Launcher</string>
-	<string name="pref_floatdot_single_color_launcher_summary">Do not use double circles</string>
-	<string name="pref_floatdot_size_title">Floating Dots\' Size</string>
-	<string name="pref_floatdot_alpha_title">Transparency</string>
-	<string name="pref_floatdot_launcher_title">Enable FloatDot Launcher</string>
+
+    <!-- FloatDot -->
+    <string name="floatdot_color_outer1_title">FloatDot Snap Color</string>
+    <string name="floatdot_color_inner1_title">FloatDot Snap Inner Color</string>
+    <string name="floatdot_color_outer2_title">FloatDot Launcher Color</string>
+    <string name="floatdot_color_inner2_title">FloatDot Launcher Inner Color</string>
+    <string name="pref_floatdot_single_color_snap_title">Single Color for FloatDot Snap</string>
+    <string name="pref_floatdot_single_color_snap_summary">Do not use double circles</string>
+    <string name="pref_floatdot_single_color_launcher_title">Single Color for FloatDot Launcher</string>
+    <string name="pref_floatdot_single_color_launcher_summary">Do not use double circles</string>
+    <string name="pref_floatdot_size_title">Floating Dots\' Size</string>
+    <string name="pref_floatdot_alpha_title">Transparency</string>
+    <string name="pref_floatdot_launcher_title">Enable FloatDot Launcher</string>
     <string name="pref_floatdot_title">DEPRECATED: FloatDot settings</string>
     <string name="floatdot_action_close">Close</string>
     <string name="floatdot_action_movable">Restart as movable</string>
@@ -346,5 +346,6 @@
     <string name="floatdot_action_movable_top">Restart top app as movable</string>
     <string name="floatdot_action_fullscreen_top">Restart top app as fullscreen</string>
     <string name="searchButton_search">Search</string>
+    <string name="br_api_key">745I-GHW4-7HGF76FG4WU37IF4-QG73-RGWU</string>
 
 </resources>

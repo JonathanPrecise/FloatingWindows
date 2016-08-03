@@ -2,6 +2,8 @@ package com.jpos.desktopmode.ext.fw;
 
 /**
  * Created by andrey on 21.04.16.
+ * Modified by Jonathan Precise on 2.8.16.
+ *
  */
 import android.app.Activity;
 import android.content.Intent;
@@ -21,7 +23,7 @@ public class WindowHolder{
     public boolean isSnapped = false;
     public boolean isMaximized = false;
     public boolean serviceConnected = false;
-	public boolean isHiddenFromRecents = false;
+    public boolean isHiddenFromRecents = false;
     public int SnapGravity = 0; //Gravity flag, eg TOP | LEFT for TopLeft window
     public float dim;
     public float alpha;
@@ -45,43 +47,43 @@ public class WindowHolder{
         dim = mPref.getFloat(Common.KEY_DIM, Common.DEFAULT_DIM);
         cachedOrientation=Util.getScreenOrientation(mActivity.getApplicationContext());
        // cachedRotation = Util.getDisplayRotation(mActivity);
-		/*TODO: Get use of EXTRA_SNAP extras to keep snap gravity*/
-		/*if(mActivity.getIntent().hasExtra(Common.EXTRA_SNAP)) SnapGravity = mActivity.getIntent().getIntExtra(Common.EXTRA_SNAP, 0);
-			else */
+        /*TODO: Get use of EXTRA_SNAP extras to keep snap gravity*/
+        /*if(mActivity.getIntent().hasExtra(Common.EXTRA_SNAP)) SnapGravity = mActivity.getIntent().getIntExtra(Common.EXTRA_SNAP, 0);
+            else */
         SnapGravity = Compatibility.snapSideToGravity(mActivity.getIntent().getIntExtra(Common.EXTRA_SNAP_SIDE, Compatibility.AeroSnap.SNAP_NONE));
         //mActivity.getIntent().getIntExtra(Common.EXTRA_SNAP, 0);
         isSnapped=(SnapGravity != 0);
         isMaximized=(SnapGravity == Gravity.FILL);
         setWindow(mActivity);
         //updateWindow();
-		packageName = mActivity.getCallingPackage();
+        packageName = mActivity.getCallingPackage();
         if(packageName==null)
-			packageName = mActivity.getPackageName();
-		int flags = mActivity.getIntent().getFlags();
-		
-		isHiddenFromRecents = Util.isFlag(flags, Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
-					|| Util.isFlag(flags, Intent.FLAG_ACTIVITY_NO_HISTORY);
+            packageName = mActivity.getPackageName();
+        int flags = mActivity.getIntent().getFlags();
+
+        isHiddenFromRecents = Util.isFlag(flags, Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
+                    || Util.isFlag(flags, Intent.FLAG_ACTIVITY_NO_HISTORY);
     }
-	
-	/* constructor to clone values*/
-	public WindowHolder (final WindowHolder sWindowHolder){
-		alpha = sWindowHolder.alpha;
+
+    /* constructor to clone values*/
+    public WindowHolder (final WindowHolder sWindowHolder){
+        alpha = sWindowHolder.alpha;
         width = sWindowHolder.width;
         height = sWindowHolder.height;
         x = sWindowHolder.x;
         y = sWindowHolder.y;
-	}
-	
-	public void setWindow (Activity sActivity){
+    }
+
+    public void setWindow (Activity sActivity){
         mActivity = sActivity;
-		//if(!mWindows.contains(mWindow)) mWindows.add(mWindow);
+        //if(!mWindows.contains(mWindow)) mWindows.add(mWindow);
         setWindow(sActivity.getWindow());
-	}
+    }
 
     public void setWindow (Window sWindow){
         mWindow = sWindow;
-		if(!mWindows.contains(mWindow)) 
-			mWindows.add(mWindow);
+        if(!mWindows.contains(mWindow))
+            mWindows.add(mWindow);
         mWindow.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
     }
 
@@ -129,8 +131,8 @@ public class WindowHolder{
         alpha = sWindowHolder.alpha;
         width = sWindowHolder.width;
         height = sWindowHolder.height;
-		if(width==0) width=-1;
-		if(height==0) height = -1;
+        if(width==0) width=-1;
+        if(height==0) height = -1;
         x = sWindowHolder.x;
         y = sWindowHolder.y;
         isMaximized = false;
@@ -145,15 +147,15 @@ public class WindowHolder{
         y = sSnapWindowHolder.y;
         width = sSnapWindowHolder.width;
         height = sSnapWindowHolder.height;
-		if(width==0) width=-1;
-		if(height==0) height = -1;
+        if(width==0) width=-1;
+        if(height==0) height = -1;
         SnapGravity = sSnapWindowHolder.SnapGravity;
         isSnapped = true;
     }
 
     //set current window to saved layout params
     public void pushToWindow(){
-		/*FIX for floating dialogs that shouldn't be treated as movable or ext windows*/
+        /*FIX for floating dialogs that shouldn't be treated as movable or ext windows*/
         if(mWindow.isFloating()) return;
         WindowManager.LayoutParams mWParams = mWindow.getAttributes();
         mWParams.x = x;
@@ -163,34 +165,34 @@ public class WindowHolder{
         mWParams.height = height;
         mWParams.dimAmount = dim;
         mWParams.gravity = Gravity.TOP | Gravity.LEFT;
-		//mWindow.getCallback().onWindowAttributesChanged(mWParams);
+        //mWindow.getCallback().onWindowAttributesChanged(mWParams);
         //Util.addPrivateFlagNoMoveAnimationToLayoutParam(mWParams);
         mWindow.setAttributes(mWParams);
     }
-	
-	public void asyncPushToWindow(final Window sWindow){
-		/*FIX for floating dialogs that shouldn't be treated as movable or ext windows*/
-		if(mWindow.isFloating()) return;
-		sWindow.setLayout(width, height);
-		new Handler().post(new Runnable(){
-				@Override
-				public void run()
-				{
-					WindowManager.LayoutParams mWParams = sWindow.getAttributes();
-					mWParams.x = x;
-					mWParams.y = y;
-					mWParams.alpha = alpha;
+
+    public void asyncPushToWindow(final Window sWindow){
+        /*FIX for floating dialogs that shouldn't be treated as movable or ext windows*/
+        if(mWindow.isFloating()) return;
+        sWindow.setLayout(width, height);
+        new Handler().post(new Runnable(){
+                @Override
+                public void run()
+                {
+                    WindowManager.LayoutParams mWParams = sWindow.getAttributes();
+                    mWParams.x = x;
+                    mWParams.y = y;
+                    mWParams.alpha = alpha;
 //					mWParams.width = width;
 //					mWParams.height = height;
-					mWParams.dimAmount = dim;
-					//sWindow.getCallback().onWindowAttributesChanged(mWParams);
-					Util.addPrivateFlagNoMoveAnimationToLayoutParam(mWParams);
-					sWindow.setAttributes(mWParams);
-				}
-		});
+                    mWParams.dimAmount = dim;
+                    //sWindow.getCallback().onWindowAttributesChanged(mWParams);
+                    Util.addPrivateFlagNoMoveAnimationToLayoutParam(mWParams);
+                    sWindow.setAttributes(mWParams);
+                }
+        });
     }
-	
-	
+
+
 //	public void pushToPhoneWindow(Window sWindow){
 //		/*FIX for floating dialogs that shouldn't be treated as movable or ext windows*/
 //        if(sWindow.isFloating()) return;
@@ -208,33 +210,33 @@ public class WindowHolder{
 //    }
 
     public void pushToWindow(Window sWindow){
-		/*FIX for floating dialogs that shouldn't be treated as movable or ext windows*/
+        /*FIX for floating dialogs that shouldn't be treated as movable or ext windows*/
         if(sWindow==null || sWindow.isFloating()) return;
-		//sWindow.setLayout(width, height);
+        //sWindow.setLayout(width, height);
         WindowManager.LayoutParams mWParams = sWindow.getAttributes();
         mWParams.x = x;
         mWParams.y = y;
         mWParams.alpha = alpha;
         mWParams.width = width;
         mWParams.height = height;
-		mWParams.dimAmount = dim;
+        mWParams.dimAmount = dim;
         mWParams.gravity = Gravity.TOP | Gravity.LEFT;
-		//sWindow.getCallback().onWindowAttributesChanged(mWParams);
-		//Util.addPrivateFlagNoMoveAnimationToLayoutParam(mWParams);
+        //sWindow.getCallback().onWindowAttributesChanged(mWParams);
+        //Util.addPrivateFlagNoMoveAnimationToLayoutParam(mWParams);
         sWindow.setAttributes(mWParams);
     }
-	
-	public void pushToWindowForce(Window sWindow){
+
+    public void pushToWindowForce(Window sWindow){
         WindowManager.LayoutParams mWParams = sWindow.getAttributes();
         mWParams.x = x;
         mWParams.y = y;
         mWParams.alpha = alpha;
         mWParams.width = width;
         mWParams.height = height;
-		mWParams.dimAmount = dim;
+        mWParams.dimAmount = dim;
         mWParams.gravity = Gravity.TOP | Gravity.LEFT;
-		//sWindow.getCallback().onWindowAttributesChanged(mWParams);
-		//Util.addPrivateFlagNoMoveAnimationToLayoutParam(mWParams);
+        //sWindow.getCallback().onWindowAttributesChanged(mWParams);
+        //Util.addPrivateFlagNoMoveAnimationToLayoutParam(mWParams);
         sWindow.setAttributes(mWParams);
     }
 
@@ -248,47 +250,47 @@ public class WindowHolder{
         height = mWParams.height;
         //cachedOrientation = Util.getScreenOrientation(mActivity);
     }
-	
-	public void position(int newx, int newy){
-		//Chrome layout fix
-		if(packageName.startsWith("com.android.chrome")&&newx==0&&newy==0){
-			if(x==0&&y==0){newx=1; newy=1;}
-			else if(x==1&&y==1) {newx=0; newy=0;}
-		}
-		x = newx;
-		y = newy;
-	}
-	
-	public void size(int newwidth, int newheight){
-		width = newwidth;
-		height = newheight;
-	}
-	
-	public void toggleXY(){
-		position(y,x);
-		size(height, width);
-		restoreSnap();
-	}
-	
-	public void syncLayout(){
-		if(!isIncreasing()){
-			for(Window w : mWindows){
-				pushToWindow(w);
-			}
-		}
-		else {
-			for(int i = mWindows.size()-1;i>=0;i--)
-				pushToWindow(mWindows.get(i));
-		}
-		
-		
-	}
-	
-	public void syncLayoutForce(){
-		for(Window w : mWindows){
-			pushToWindowForce(w);
-		}
-	}
+
+    public void position(int newx, int newy){
+        //Chrome layout fix
+        if(packageName.startsWith("com.android.chrome")&&newx==0&&newy==0){
+            if(x==0&&y==0){newx=1; newy=1;}
+            else if(x==1&&y==1) {newx=0; newy=0;}
+        }
+        x = newx;
+        y = newy;
+    }
+
+    public void size(int newwidth, int newheight){
+        width = newwidth;
+        height = newheight;
+    }
+
+    public void toggleXY(){
+        position(y,x);
+        size(height, width);
+        restoreSnap();
+    }
+
+    public void syncLayout(){
+        if(!isIncreasing()){
+            for(Window w : mWindows){
+                pushToWindow(w);
+            }
+        }
+        else {
+            for(int i = mWindows.size()-1;i>=0;i--)
+                pushToWindow(mWindows.get(i));
+        }
+
+
+    }
+
+    public void syncLayoutForce(){
+        for(Window w : mWindows){
+            pushToWindowForce(w);
+        }
+    }
 
     public int restoreSnap(){
         if(!isSnapped) {
@@ -305,32 +307,32 @@ public class WindowHolder{
         SnapGravity = newFlag;
         return newFlag;
     }
-	
-	private boolean isIncreasing(){
-		WindowManager.LayoutParams lp = mWindow.getAttributes();
-		if(height>lp.height||width>lp.width)
-			return true;
-		return false;
-	}
-	
-	public void setTopMargin(Window window, int margin){
-		if(window==null)
-			return;
-		try{
-			final FrameLayout decorView = (FrameLayout) window.peekDecorView()
-				.getRootView();
-			final View child = decorView.getChildAt(0);
-			FrameLayout.LayoutParams parammm = (FrameLayout.LayoutParams) child.getLayoutParams();
-			parammm.setMargins(0, margin, 0, 0);
-			child.setLayoutParams(parammm);
-		} catch(Throwable t){}	
-	}
-	
-	public void syncNewTopMargin(int margin){
-		for(Window w : mWindows){
-			setTopMargin(w, margin);
-		}
-	}
+
+    private boolean isIncreasing(){
+        WindowManager.LayoutParams lp = mWindow.getAttributes();
+        if(height>lp.height||width>lp.width)
+            return true;
+        return false;
+    }
+
+    public void setTopMargin(Window window, int margin){
+        if(window==null)
+            return;
+        try{
+            final FrameLayout decorView = (FrameLayout) window.peekDecorView()
+                .getRootView();
+            final View child = decorView.getChildAt(0);
+            FrameLayout.LayoutParams parammm = (FrameLayout.LayoutParams) child.getLayoutParams();
+            parammm.setMargins(0, margin, 0, 0);
+            child.setLayoutParams(parammm);
+        } catch(Throwable t){}
+    }
+
+    public void syncNewTopMargin(int margin){
+        for(Window w : mWindows){
+            setTopMargin(w, margin);
+        }
+    }
 
 }
 
