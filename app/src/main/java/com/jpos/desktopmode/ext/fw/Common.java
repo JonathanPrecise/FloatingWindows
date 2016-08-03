@@ -4,11 +4,11 @@ package com.jpos.desktopmode.ext.fw;
 import android.os.Build;
 import android.view.Gravity;
 
-@SuppressWarnings("WeakerAccess")
+@SuppressWarnings({"WeakerAccess", "LongLine"})
 public class Common {
 
     /* Preference misc */
-    public static final String ORIGINAL_PACKAGE_NAME = "com.zst.xposed.halo.floatingwindow";//To keep backwards compatibility we have to use old package name
+    public static final String ORIGINAL_PACKAGE_NAME = "com.zst.xposed.halo.floatingwindow"; //To keep backwards compatibility we have to use old package name
     public static final String THIS_MOD_PACKAGE_NAME = Common.class.getPackage().getName();
     public static final String PREFERENCE_MAIN_FILE = THIS_MOD_PACKAGE_NAME + "_general";
     public static final String PREFERENCE_PACKAGES_FILE = THIS_MOD_PACKAGE_NAME + "_packages";
@@ -190,8 +190,8 @@ public class Common {
     public static final String XDA_THREAD = "http://jonathan-apps.com/report/com.jpos.desktopmode.ext.fw";
 
     /* SystemUI Broadcast */
-    public static final String STATUSBAR_TASKBAR_REFRESH = ORIGINAL_PACKAGE_NAME + ".STATUSBAR_TASKBAR_REFRESH";
-    public static final String STATUSBAR_TASKBAR_LAUNCH = ORIGINAL_PACKAGE_NAME + ".STATUSBAR_TASKBAR_LAUNCH";
+    //public static final String STATUSBAR_TASKBAR_REFRESH = ORIGINAL_PACKAGE_NAME + ".STATUSBAR_TASKBAR_REFRESH";
+    //public static final String STATUSBAR_TASKBAR_LAUNCH = ORIGINAL_PACKAGE_NAME + ".STATUSBAR_TASKBAR_LAUNCH";
     public static final String SHOW_OUTLINE = ORIGINAL_PACKAGE_NAME + ".SHOW_OUTLINE";
     public static final String REMOVE_NOTIFICATION_RESTORE = ORIGINAL_PACKAGE_NAME + ".REMOVE_NOTIFICATION_RESTORE.";
     public static final String SEND_MULTIWINDOW_SWIPE = ORIGINAL_PACKAGE_NAME + ".SEND_MULTIWINDOW_SWIPE.";

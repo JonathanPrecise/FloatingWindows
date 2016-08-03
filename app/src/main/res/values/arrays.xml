@@ -11,7 +11,7 @@
         <item>@string/option_movable_corner_hide_app</item>
         <item>@string/option_movable_corner_maximize</item>
     </string-array>
-    
+
     <string-array name="option_movable_corner_values">
         <item>0</item>
         <item>1</item>
@@ -21,7 +21,7 @@
         <item>4</item>
         <item>6</item>
     </string-array>
-    
+
     <!-- Whitelist / Blacklist Options -->
     <string-array name="option_whiteblacklist_entries">
         <item>@string/option_whiteblacklist_default</item>
@@ -29,15 +29,15 @@
         <item>@string/option_whiteblacklist_never_only</item>
         <item>@string/option_whiteblacklist_never_all</item>
     </string-array>
-    
+
     <string-array name="option_whiteblacklist_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
     </string-array>
-	
-	<string-array name="option_force_snap_entries">
+
+    <string-array name="option_force_snap_entries">
         <item>@string/option_force_snap_default</item>
         <item>@string/option_force_snap_halo_only</item>
         <item>@string/option_force_snap_always</item>

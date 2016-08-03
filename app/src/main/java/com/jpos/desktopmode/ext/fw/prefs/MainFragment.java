@@ -1,14 +1,12 @@
 package com.jpos.desktopmode.ext.fw.prefs;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,66 +19,49 @@ import com.jpos.desktopmode.ext.fw.R;
 
 import java.io.DataOutputStream;
 
-public class MainFragment extends PreferenceFragment implements OnPreferenceClickListener {
+/**
+ * "General" tab fragment.
+ */
+public class MainFragment extends PreferenceFragment { /* implements OnPreferenceClickListener */
 
     @SuppressWarnings("WeakerAccess")
     static MainFragment mInstance;
     SharedPreferences mPref;
 
-    public static MainFragment getInstance() {
-        if (mInstance == null) {
-            mInstance = new MainFragment();
-        }
-        return mInstance;
-    }
-
+    /**
+     * Create the fragment
+     * @param savedInstanceState savedInstanceState
+     */
     @Override
-    @SuppressWarnings("deprecation")
+    @SuppressWarnings({"deprecation", "SpellCheckingInspection"})
     @SuppressLint("WorldReadableFiles")
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getPreferenceManager().setSharedPreferencesName(Common.PREFERENCE_MAIN_FILE);
         getPreferenceManager().setSharedPreferencesMode(PreferenceActivity.MODE_WORLD_READABLE);
         addPreferencesFromResource(R.xml.pref_general);
-//		findPreference(Common.KEY_KEYBOARD_MODE).setOnPreferenceClickListener(this);
-//		findPreference(Common.KEY_RESTART_SYSTEMUI).setOnPreferenceClickListener(this);
-//		findPreference(
-//          Common.KEY_STATUSBAR_TASKBAR_RESTART_SYSTEMUI).setOnPreferenceClickListener(this);
-//		findPreference(Common.KEY_BLACKLIST_APPS).setOnPreferenceClickListener(this);
-//		findPreference(Common.KEY_WHITELIST_APPS).setOnPreferenceClickListener(this);
-//		findPreference(Common.KEY_STATUSBAR_TASKBAR_PINNED_APPS).setOnPreferenceClickListener(this);
-//		if (Build.VERSION.SDK_INT >= 20) { // Lollipop
-//			Preference p = findPreference("system_notif_top");
-//			p.setEnabled(false);
-//			p.setSummary(R.string.pref_systemui_top_summary_not_supported_lollipop);
-//		}
         mPref = getActivity().getSharedPreferences(Common.PREFERENCE_MAIN_FILE,
                 PreferenceActivity.MODE_WORLD_READABLE);
+
+        /* DEPRECATED
+        findPreference(Common.KEY_KEYBOARD_MODE).setOnPreferenceClickListener(this);
+        findPreference(Common.KEY_RESTART_SYSTEMUI).setOnPreferenceClickListener(this);
+        findPreference(
+                Common.KEY_STATUSBAR_TASKBAR_RESTART_SYSTEMUI).setOnPreferenceClickListener(this);
+        findPreference(Common.KEY_BLACKLIST_APPS).setOnPreferenceClickListener(this);
+        findPreference(Common.KEY_WHITELIST_APPS).setOnPreferenceClickListener(this);
+        findPreference(Common.KEY_STATUSBAR_TASKBAR_PINNED_APPS).setOnPreferenceClickListener(this);
+        if (Build.VERSION.SDK_INT >= 20) { // Lollipop
+            Preference p = findPreference("system_notif_top");
+            p.setEnabled(false);
+            p.setSummary(R.string.pref_systemui_top_summary_not_supported_lollipop);
+        }
+        */
     }
 
-    @Override
-    public boolean onPreferenceClick(Preference p) {
-//		String k = p.getKey();
-//		if (k.equals(Common.KEY_KEYBOARD_MODE)) {
-//			showKeyboardDialog();
-//			return true;
-//		} else if (k.equals(Common.KEY_RESTART_SYSTEMUI)
-//				|| k.equals(Common.KEY_STATUSBAR_TASKBAR_RESTART_SYSTEMUI)) {
-//			showKillPackageDialog("com.android.systemui");
-//			return true;
-//		}else if (k.equals(Common.KEY_BLACKLIST_APPS)) {
-//			showBlacklistActivity();
-//			return true;
-//		}else if (k.equals(Common.KEY_WHITELIST_APPS)) {
-//			showWhitelistActivity();
-//			return true;
-//		}else if (k.equals(Common.KEY_STATUSBAR_TASKBAR_PINNED_APPS)) {
-//			showStatusbarTaskbarPinAppActivity();
-//			return true;
-//		}
-        return false;
-    }
-
+    /**
+     * Seems unused, will remove later
+     */
     @SuppressWarnings("unused")
     private void showKeyboardDialog() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -90,6 +71,7 @@ public class MainFragment extends PreferenceFragment implements OnPreferenceClic
         builder.setTitle(R.string.pref_keyboard_title);
 
         final AlertDialog dialog = builder.create();
+        //noinspection Convert2Diamond
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1, android.R.id.text1);
 
@@ -133,6 +115,7 @@ public class MainFragment extends PreferenceFragment implements OnPreferenceClic
     }
 
     private void killPackage(final String pkgToKill) {
+        //noinspection AnonymousInnerClassMayBeStatic
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -151,18 +134,48 @@ public class MainFragment extends PreferenceFragment implements OnPreferenceClic
         }).start();
     }
 
-    /*
+    public static MainFragment getInstance() {
+        if (mInstance == null) {
+            mInstance = new MainFragment();
+        }
+        return mInstance;
+    }
+
+    /* DEPRECATED
+
+    @Override
+    public boolean onPreferenceClick(Preference p) {
+        String k = p.getKey();
+        if (k.equals(Common.KEY_KEYBOARD_MODE)) {
+            showKeyboardDialog();
+            return true;
+        } else if (k.equals(Common.KEY_RESTART_SYSTEMUI)
+                || k.equals(Common.KEY_STATUSBAR_TASKBAR_RESTART_SYSTEMUI)) {
+            showKillPackageDialog("com.android.systemui");
+            return true;
+        } else if (k.equals(Common.KEY_BLACKLIST_APPS)) {
+            showBlacklistActivity();
+            return true;
+        } else if (k.equals(Common.KEY_WHITELIST_APPS)) {
+            showWhitelistActivity();
+            return true;
+        } else if (k.equals(Common.KEY_STATUSBAR_TASKBAR_PINNED_APPS)) {
+            showStatusbarTaskbarPinAppActivity();
+            return true;
+        }
+        return false;
+    }
 
     private void showStatusbarTaskbarPinAppActivity() {
         startActivity(new Intent(getActivity(), StatusbarTaskbarPinAppActivity.class));
     }
 
     private void showWhitelistActivity() {
-        startActivity(new Intent(getActivity(), XhitelistActivity.class));
+        startActivity(new Intent(getActivity(), WhitelistActivity.class));
     }
 
     private void showBlacklistActivity() {
-        startActivity(new Intent(getActivity(), ClacklistActivity.class));
+        startActivity(new Intent(getActivity(), BlacklistActivity.class));
     }
 
     */

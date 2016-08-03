@@ -2,11 +2,16 @@
   <dictionary name="jonos">
     <words>
       <w>aero</w>
+      <w>floatingwindow</w>
+      <w>pkill</w>
       <w>recents</w>
       <w>statusbar</w>
+      <w>systemui</w>
+      <w>taskbar</w>
       <w>titlebar</w>
       <w>whiteblacklist</w>
       <w>whitelist</w>
+      <w>xposed</w>
     </words>
   </dictionary>
 </component>
