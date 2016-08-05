@@ -151,6 +151,12 @@ public class MainXposed implements IXposedHookLoadPackage, IXposedHookZygoteInit
             } catch (Throwable t) {
                 XposedBridge.log(t);
             }
+
+            try {
+                AndroidHooks.hookInputServiceForBackButton(lpparam);
+            } catch (Throwable t) {
+                XposedBridge.log(t);
+            }
         } else if(!lpparam.packageName.startsWith("com.android.systemui")) {
             try {
                 MovableWindow.hookActivity(lpparam);
@@ -171,7 +177,6 @@ public class MainXposed implements IXposedHookLoadPackage, IXposedHookZygoteInit
             // FloatingWindow
             TestingSettingHook.handleLoadPackage(lpparam);
         } else if (lpparam.packageName.equals("com.android.systemui")) {
-            //T0D0 SH0ULDN'T H00K SYSTEMUI
             try {
                 SystemUIOutliner.handleLoadPackage(lpparam);
             } catch(Exception e) {

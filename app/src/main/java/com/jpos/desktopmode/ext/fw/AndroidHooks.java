@@ -1,4 +1,5 @@
 package com.jpos.desktopmode.ext.fw;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.XposedHelpers;
+import de.robv.android.xposed.callbacks.XC_LoadPackage;
 import de.robv.android.xposed.callbacks.XCallback;
 
 public class AndroidHooks
@@ -384,6 +386,201 @@ public class AndroidHooks
             });
     }
 
+    @SuppressWarnings("WeakerAccess")
+    public static final int IM_INJECT_INPUT_EVENT_MODE_ASYNC = 0;
+    @SuppressWarnings("unused")
+    public static final int IM_INJECT_INPUT_EVENT_MODE_WAIT_FOR_RESULT = 1;
+    @SuppressWarnings("unused")
+    public static final int IM_INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH = 2;
+    @SuppressWarnings("WeakerAccess")
+    public static final int IMS_INJECTION_TIMEOUT_MILLIS = 30 * 1000;
+    @SuppressWarnings("WeakerAccess")
+    public static final int WMP_FLAG_DISABLE_KEY_REPEAT = 0x08000000;
+
+    @SuppressWarnings("WeakerAccess")
+    public static void hookInputServiceForBackButton(XC_LoadPackage.LoadPackageParam lpparam) {
+        /* DEPRECATED
+
+        final Class<?> iManagerService = findClass("com.android.server.input.InputManagerService",
+                lpparam.classLoader);
+        Log.d(Common.LOG_TAG, "START HOOK BACKBTN");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            hookInputServiceForBackButtonLP(iManagerService);
+        } else {
+            hookInputServiceForBackButtonKK(iManagerService);
+        }*/
+    }
+
+    /* DEPRECATED
+
+    public static void hookInputServiceForBackButtonLP(final Class<?> clazz) {
+        XposedBridge.hookAllMethods(clazz, "injectInputEventInternal", new XC_MethodHook() {
+            @Override
+            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                try {
+                    XposedBridgeHelper.logd(Common.LOG_TAG,
+                            "Call on hooked injectInputEventInternal");
+
+                    //noinspection ThrowableResultOfMethodCallIgnored
+                    if (param.hasThrowable()) {
+
+                        XposedBridgeHelper.logd(Common.LOG_TAG, "Exception caught");
+
+                        InputEvent event = (InputEvent) param.args[0];
+                        int displayId = (int) param.args[1];
+                        int mode = (int) param.args[2];
+                        int mPtr = XposedHelpers.getIntField(param.thisObject, "mPtr");
+
+                        if (!SystemUIHelper.IS_FROM_DESKTOP_MODE) {
+                            XposedBridgeHelper.logd(Common.LOG_TAG, "MALWARE HIJACK DETECTED");
+                            XposedBridgeHelper.logd(Common.LOG_TAG, "BLOCKING MALICIOUS ATTEMPT");
+                            param.setThrowable(new SecurityException(param.getThrowable()));
+                            return;
+                        }
+
+                        SystemUIHelper.IS_FROM_DESKTOP_MODE = false;
+
+                        XposedHelpers.callMethod(
+                                param.thisObject,
+                                "nativeInjectInputEvent",
+                                new Class[]{
+                                        int.class,
+                                        InputEvent.class,
+                                        int.class,
+                                        int.class,
+                                        int.class,
+                                        int.class,
+                                        int.class,
+                                        int.class
+                                },
+                                mPtr,
+                                event,
+                                displayId,
+                                0,
+                                0,
+                                mode,
+                                IMS_INJECTION_TIMEOUT_MILLIS,
+                                WMP_FLAG_DISABLE_KEY_REPEAT
+                        );
+
+                        SystemUIHelper.IS_FROM_DESKTOP_MODE = false;
+
+                        param.setResult(Boolean.TRUE);
+
+                        /* DEPRECATED
+
+                        nativeInjectInputEvent(mPtr, event, 0, 0, mode,
+                                IMS_INJECTION_TIMEOUT_MILLIS, WMP_FLAG_DISABLE_KEY_REPEAT);
+
+
+                    } else if (!param.hasThrowable()) {
+                        param.setResult(param.getResult());
+                    }
+                } catch (SecurityException e) {
+                    XposedBridgeHelper.logd(Common.LOG_TAG,
+                            "The malicious attempt has been blocked.");
+                    XposedBridgeHelper.logd(Common.LOG_TAG,
+                            "NOTE: The offending app will probably crash.");
+                    XposedBridgeHelper.logd(Common.LOG_TAG,
+                            "Have a nice day!");
+                    param.setThrowable(e);
+                } catch (Throwable t) {
+                    t.printStackTrace();
+                    XposedBridge.log(t);
+                    param.setThrowable(
+                            new SecurityException(
+                                    "Cant preform injection",
+                                    t
+                            )
+                    );
+                }
+            }
+        });
+    }
+
+    @SuppressWarnings("WeakerAccess")
+    public static void hookInputServiceForBackButtonKK(final Class<?> clazz) {
+        XposedBridge.hookAllMethods(clazz, "injectInputEvent", new XC_MethodHook() {
+            @Override
+            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                try {
+                    XposedBridgeHelper.logd(Common.LOG_TAG, "Call on hooked injectInputEvent");
+
+                    //noinspection ThrowableResultOfMethodCallIgnored
+                    if (param.hasThrowable()) {
+
+                        XposedBridgeHelper.logd(Common.LOG_TAG, "Exception caught");
+
+                        InputEvent event = (InputEvent) param.args[0];
+                        int mode = (int) param.args[1];
+                        int mPtr = XposedHelpers.getIntField(param.thisObject, "mPtr");
+
+                        if (!SystemUIHelper.IS_FROM_DESKTOP_MODE) {
+                            XposedBridgeHelper.logd(Common.LOG_TAG, "MALWARE HIJACK DETECTED");
+                            XposedBridgeHelper.logd(Common.LOG_TAG, "BLOCKING MALICIOUS ATTEMPT");
+                            param.setThrowable(new SecurityException(param.getThrowable()));
+                            return;
+                        }
+
+                        SystemUIHelper.IS_FROM_DESKTOP_MODE = false;
+
+                        XposedHelpers.callMethod(
+                                param.thisObject,
+                                "nativeInjectInputEvent",
+                                new Class[]{
+                                        int.class,
+                                        InputEvent.class,
+                                        int.class,
+                                        int.class,
+                                        int.class,
+                                        int.class,
+                                        int.class
+                                },
+                                mPtr,
+                                event,
+                                0,
+                                0,
+                                mode,
+                                IMS_INJECTION_TIMEOUT_MILLIS,
+                                WMP_FLAG_DISABLE_KEY_REPEAT
+                        );
+
+                        SystemUIHelper.IS_FROM_DESKTOP_MODE = false;
+
+                        param.setResult(Boolean.TRUE);
+
+                        /* DEPRECATED
+
+                        nativeInjectInputEvent(mPtr, event, 0, 0, mode,
+                                IMS_INJECTION_TIMEOUT_MILLIS, WMP_FLAG_DISABLE_KEY_REPEAT);
+
+
+                    } else if (!param.hasThrowable()) {
+                        param.setResult(param.getResult());
+                    }
+                } catch (SecurityException e) {
+                    XposedBridgeHelper.logd(Common.LOG_TAG,
+                            "The malicious attempt has been blocked.");
+                    XposedBridgeHelper.logd(Common.LOG_TAG,
+                            "NOTE: The offending app will probably crash.");
+                    XposedBridgeHelper.logd(Common.LOG_TAG,
+                            "Have a nice day!");
+                    param.setThrowable(e);
+                } catch (Throwable t) {
+                    t.printStackTrace();
+                    XposedBridge.log(t);
+                    param.setThrowable(
+                            new SecurityException(
+                                    "Cant preform injection",
+                                    t
+                            )
+                    );
+                }
+            }
+        });
+    }*/
+
+    @SuppressWarnings("WeakerAccess")
     public static void hookActivityStack(Class<?> hookClass) throws Throwable {
         XposedBridge.hookAllMethods(hookClass, "resumeTopActivityLocked", new XC_MethodHook() {
                 Object previous = null;

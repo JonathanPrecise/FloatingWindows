@@ -5,9 +5,11 @@ package com.jpos.desktopmode.ext.fw;
  * Modified by Jonathan Precise on 2.8.16.
  *
  */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,13 +76,13 @@ public class WindowHolder{
         y = sWindowHolder.y;
     }
 
-    public void setWindow (Activity sActivity){
+    public void setWindow(Activity sActivity){
         mActivity = sActivity;
         //if(!mWindows.contains(mWindow)) mWindows.add(mWindow);
         setWindow(sActivity.getWindow());
     }
 
-    public void setWindow (Window sWindow){
+    public void setWindow(Window sWindow){
         mWindow = sWindow;
         if(!mWindows.contains(mWindow))
             mWindows.add(mWindow);
@@ -106,6 +108,7 @@ public class WindowHolder{
         updateWindow();
     }
 
+    @SuppressWarnings("WeakerAccess")
     public void updateWindow(){
         alpha = mWindow.getAttributes().alpha;
         width = mWindow.getAttributes().width;
@@ -117,13 +120,29 @@ public class WindowHolder{
 
     
 
+    @SuppressWarnings("WeakerAccess")
     public void setMaximized(){
         width = ViewGroup.LayoutParams.MATCH_PARENT;
-        height = ViewGroup.LayoutParams.MATCH_PARENT;
-        x=0;
-        y=0;
-        SnapGravity=Gravity.FILL;
-        isMaximized=true;
+
+        try {
+            DisplayMetrics displayMetrics = mActivity.getResources().getDisplayMetrics();
+            int heightInit = displayMetrics.heightPixels;
+            height = heightInit - Util.realDp(72, mActivity);
+        } catch (Throwable t) {
+            height = ViewGroup.LayoutParams.MATCH_PARENT;
+        }
+        x = 0;
+        y = 0;
+        SnapGravity = Gravity.FILL;
+        // SnapGravity = Gravity.FILL;
+        isMaximized = true;
+        Intent i = new Intent("com.jpos.action.MAXIMIZED_STATE_CHANGED");
+        i.putExtra("com.jpos.extra.MAXIMIZED", isMaximized);
+        try {
+            mActivity.sendBroadcast(i);
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
     }
 
     //restore/copy precached data
@@ -139,6 +158,13 @@ public class WindowHolder{
         //isFloating = sWindowHolder.isFloating;
         isSnapped = false;
         SnapGravity = 0;
+        Intent i = new Intent("com.jpos.action.MAXIMIZED_STATE_CHANGED");
+        i.putExtra("com.jpos.extra.MAXIMIZED", isMaximized);
+        try {
+            mActivity.sendBroadcast(i);
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
         //pushToWindow();
     }
 
@@ -147,10 +173,28 @@ public class WindowHolder{
         y = sSnapWindowHolder.y;
         width = sSnapWindowHolder.width;
         height = sSnapWindowHolder.height;
-        if(width==0) width=-1;
-        if(height==0) height = -1;
+        if (width == 0) {
+            width = -1;
+        }
+        if (height == 0) {
+            try {
+                DisplayMetrics displayMetrics = mActivity.getResources().getDisplayMetrics();
+                int height = displayMetrics.heightPixels;
+                this.height = (height - Util.realDp(72, mActivity));
+            } catch (Throwable t) {
+                height = -1;
+                t.printStackTrace();
+            }
+        }
         SnapGravity = sSnapWindowHolder.SnapGravity;
         isSnapped = true;
+        Intent i = new Intent("com.jpos.action.MAXIMIZED_STATE_CHANGED");
+        i.putExtra("com.jpos.extra.MAXIMIZED", isSnapped);
+        try {
+            mActivity.sendBroadcast(i);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //set current window to saved layout params
@@ -241,7 +285,7 @@ public class WindowHolder{
     }
 
     //get current window layout params
-    public void pullFromWindow(){
+    /*public void pullFromWindow(){
         WindowManager.LayoutParams mWParams = mWindow.getAttributes();
         x = mWParams.x;
         y = mWParams.y;
@@ -249,7 +293,7 @@ public class WindowHolder{
         width = mWParams.width;
         height = mWParams.height;
         //cachedOrientation = Util.getScreenOrientation(mActivity);
-    }
+    }*/
 
     public void position(int newx, int newy){
         //Chrome layout fix

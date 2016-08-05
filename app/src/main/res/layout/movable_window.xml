@@ -198,10 +198,25 @@
             android:layout_alignParentTop="true"
             android:adjustViewBounds="true"
             android:paddingLeft="0dp"
-            android:paddingRight="2dp"
+            android:paddingRight="0dp"
             android:scaleType="fitCenter"
             android:src="#FFF"
             android:tag="movable_titlebar_more" />
+
+        <ImageButton
+            android:id="@+id/movable_titlebar_back"
+            style="@android:style/Widget.Holo.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/movable_titlebar_more"
+            android:adjustViewBounds="true"
+            android:paddingLeft="0dp"
+            android:paddingRight="2dp"
+            android:scaleType="fitCenter"
+            android:src="#FFF"
+            android:tag="movable_titlebar_min" />
 
         <View
             android:id="@+id/movable_titlebar_line"

@@ -7,4 +7,5 @@
     <color name="absWhite">#FFF</color>
     <color name="absBlack">#000</color>
     <color name="greenDM">#FF82F124</color>
+    <color name="listViewSelectedLight">#EBEBEB</color>
 </resources>

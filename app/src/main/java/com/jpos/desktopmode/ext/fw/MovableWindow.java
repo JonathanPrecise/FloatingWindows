@@ -16,7 +16,6 @@ import android.content.ServiceConnection;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -169,7 +168,7 @@ public class MovableWindow
                 showFocusOutline = false; //is was actualy disabled because the window lost focus
                 mWindowHolder.setWindow((Activity) param.thisObject);
                 mWindowHolder.syncLayout();
-                setOverlayView();
+                setOverlayView(lpparam);
                 showTitleBar();
                 DEBUG("onStartEND");
 
@@ -576,7 +575,7 @@ public class MovableWindow
         mOverlayView.setTitleBarVisibility(show);
     }
 
-    public static void setOverlayView(){
+    public static void setOverlayView(XC_LoadPackage.LoadPackageParam lpparams){
         DEBUG("setOverlayView");
         /*  We don't touch floating dialogs  */
         if (mWindowHolder==null || mWindowHolder.mWindow.isFloating()) return;
@@ -939,7 +938,6 @@ public class MovableWindow
     /*********************** Minimize **************************/
     /***********************************************************/
     // Send the app to the back, and show a notification to restore
-    @SuppressLint("NewApi")
     @SuppressWarnings("deprecation")
     public static void minimizeAndShowNotification(final Activity ac) {
         if (!mMinimizeToStatusbar) {
@@ -963,11 +961,7 @@ public class MovableWindow
             .setOngoing(true);
 
         Notification n;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            n = nb.build();
-        } else {
-            n = nb.getNotification();
-        }
+        n = nb.build();
 
         final NotificationManager notificationManager =
             (NotificationManager) ac.getSystemService(Context.NOTIFICATION_SERVICE);

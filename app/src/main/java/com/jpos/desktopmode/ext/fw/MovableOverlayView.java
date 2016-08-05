@@ -9,7 +9,6 @@ import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -82,7 +81,7 @@ public class MovableOverlayView extends RelativeLayout {
      * @param pref - preference of the module
      */
     public MovableOverlayView(Activity activity, Resources resources,
-            SharedPreferences pref) {
+                              SharedPreferences pref) {
         super(activity);
 
         // Set the params
@@ -308,48 +307,53 @@ public class MovableOverlayView extends RelativeLayout {
     }
 
     // Corner Buttons (Triangle, Quadrant) Actions.
+    @SuppressWarnings("UnusedParameters")
     private void cornerButtonClickAction(int type_of_action) {
+        // Ignore
+
+        /* DEPRECATED
+
         String index = "0";
         switch (type_of_action) {
-        case ACTION_CLICK_TRIANGLE:
-            index = mPref.getString(Common.KEY_WINDOW_TRIANGLE_CLICK_ACTION,
-                    Common.DEFAULT_WINDOW_TRIANGLE_CLICK_ACTION);
-            break;
-        case ACTION_LONGPRESS_TRIANGLE:
-            index = mPref.getString(Common.KEY_WINDOW_TRIANGLE_LONGPRESS_ACTION,
-                    Common.DEFAULT_WINDOW_TRIANGLE_LONGPRESS_ACTION);
-            break;
-        case ACTION_CLICK_QUADRANT:
-            index = mPref.getString(Common.KEY_WINDOW_QUADRANT_CLICK_ACTION,
-                    Common.DEFAULT_WINDOW_QUADRANT_CLICK_ACTION);
-            break;
-        case ACTION_LONGPRESS_QUADRANT:
-            index = mPref.getString(Common.KEY_WINDOW_QUADRANT_LONGPRESS_ACTION,
-                    Common.DEFAULT_WINDOW_QUADRANT_LONGPRESS_ACTION);
-            break;
+            case ACTION_CLICK_TRIANGLE:
+                index = mPref.getString(Common.KEY_WINDOW_TRIANGLE_CLICK_ACTION,
+                        Common.DEFAULT_WINDOW_TRIANGLE_CLICK_ACTION);
+                break;
+            case ACTION_LONGPRESS_TRIANGLE:
+                index = mPref.getString(Common.KEY_WINDOW_TRIANGLE_LONGPRESS_ACTION,
+                        Common.DEFAULT_WINDOW_TRIANGLE_LONGPRESS_ACTION);
+                break;
+            case ACTION_CLICK_QUADRANT:
+                index = mPref.getString(Common.KEY_WINDOW_QUADRANT_CLICK_ACTION,
+                        Common.DEFAULT_WINDOW_QUADRANT_CLICK_ACTION);
+                break;
+            case ACTION_LONGPRESS_QUADRANT:
+                index = mPref.getString(Common.KEY_WINDOW_QUADRANT_LONGPRESS_ACTION,
+                        Common.DEFAULT_WINDOW_QUADRANT_LONGPRESS_ACTION);
+                break;
         }
         switch (Integer.parseInt(index)) {
-        case 0: // Do Nothing
-            break;
-        case 1: // Drag & Move Bar
-            setDragActionBarVisibility(true, true);
-            break;
-        case 2:
-            closeApp();
-            break;
-        case 3: // Transparency Dialog
-            showTransparencyDialogVisibility();
-            break;
-        case 4: // Minimize / Hide Entire App
-            MovableWindow.minimizeAndShowNotification(mActivity);
-            break;
-        case 5: // Drag & Move Bar w/o hiding corner
-            setDragActionBarVisibility(true, false);
-            break;
-        case 6: // Maximize App
-            MovableWindow.maximize();
-            break;
-        }
+            case 0: // Do Nothing
+                break;
+            case 1: // Drag & Move Bar
+                setDragActionBarVisibility(true, true);
+                break;
+            case 2:
+                closeApp();
+                break;
+            case 3: // Transparency Dialog
+                showTransparencyDialogVisibility();
+                break;
+            case 4: // Minimize / Hide Entire App
+                MovableWindow.minimizeAndShowNotification(mActivity);
+                break;
+            case 5: // Drag & Move Bar w/o hiding corner
+                setDragActionBarVisibility(true, false);
+                break;
+            case 6: // Maximize App
+                MovableWindow.maximize();
+                break;
+        }*/
     }
 
     // Create the Titlebar
@@ -372,30 +376,64 @@ public class MovableOverlayView extends RelativeLayout {
                 R.id.movable_titlebar_min, "movable_titlebar_min");
         final ImageButton more_button = (ImageButton) findViewByIdHelper(header,
                 R.id.movable_titlebar_more, "movable_titlebar_more");
+        final ImageButton back_button = (ImageButton) findViewByIdHelper(header,
+                R.id.movable_titlebar_back, "movable_titlebar_back");
         final ImageButton close_button = (ImageButton) findViewByIdHelper(header,
                 R.id.movable_titlebar_close, "movable_titlebar_close");
 
         app_title.setText(mActivity.getApplicationInfo().loadLabel(mActivity.getPackageManager()));
 
         switch (mTitleBarIconType) {
-        case Common.TITLEBAR_ICON_ORIGINAL:
-            close_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_close_old));
-            max_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_max_old));
-            min_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_min_old));
-            more_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_more_old));
-            break;
-        case Common.TITLEBAR_ICON_BachMinuetInG:
-            close_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_close));
-            max_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_max));
-            min_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_min));
-            more_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_more));
-            break;
-        case Common.TITLEBAR_ICON_SSNJR2002:
-            close_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_close_ssnjr));
-            max_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_max_ssnjr));
-            min_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_min_ssnjr));
-            more_button.setImageDrawable(mResource.getDrawable(R.drawable.movable_title_more_ssnjr));
-            break;
+            case Common.TITLEBAR_ICON_ORIGINAL:
+                close_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_close_original));
+                max_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_max_original));
+                min_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_min_original));
+                more_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_more_original));
+                back_button.setVisibility(INVISIBLE);
+                break;
+            case Common.TITLEBAR_ICON_WIN:
+                close_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_close_win));
+                max_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_max_win));
+                min_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_min_win));
+                more_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_more_win));
+                back_button.setVisibility(VISIBLE);
+                back_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_back_win));
+                break;
+            case Common.TITLEBAR_ICON_ANDROIDY:
+                close_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_close_material));
+                max_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_max_material));
+                min_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_min_material));
+                more_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_more_material));
+                back_button.setVisibility(VISIBLE);
+                back_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_back_material));
+                break;
+            case Common.TITLEBAR_ICON_NOUGATY:
+                close_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_close_nougat));
+                max_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_max_nougat));
+                min_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_min_nougat));
+                more_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_more_nougat));
+                back_button.setVisibility(VISIBLE);
+                back_button.setImageDrawable(
+                        mResource.getDrawable(R.drawable.movable_title_back_nougat));
+                break;
         }
 
         RelativeLayout.LayoutParams header_param = (LayoutParams) header.getLayoutParams();
@@ -434,6 +472,7 @@ public class MovableOverlayView extends RelativeLayout {
         menu.add(menu_item4_sub7);
         menu.add(menu_item4_sub8);
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @SuppressLint("RtlHardcoded")
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (item.getTitle().equals(item1)) {
@@ -472,16 +511,35 @@ public class MovableOverlayView extends RelativeLayout {
                 } else if (id == R.id.movable_titlebar_max || tag.equals("movable_titlebar_max")) {
                     MovableWindow.maximize();
                 } else if (id == R.id.movable_titlebar_min || tag.equals("movable_titlebar_min")) {
+                    XposedBridgeHelper.logd(Common.LOG_TAG, "MINIMIZING");
                     MovableWindow.minimizeAndShowNotification(mActivity);
-                } else if (id == R.id.movable_titlebar_more || tag.equals("movable_titlebar_more")) {
+                } else if (id == R.id.movable_titlebar_more || tag.equals("movable_titlebar_more")){
                     popupMenu.show();
+                } else if (id == R.id.movable_titlebar_back || tag.equals("movable_titlebar_back")){
+                    /**
+                     * Not called, so implemented separate clickListener
+                     */
                 }
             }
         };
+
+        //noinspection AnonymousInnerClassMayBeStatic
+        final View.OnClickListener backClick = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /**
+                 * This is the one called with the back press.
+                 */
+                XposedBridgeHelper.logd(Common.LOG_TAG, "BACK");
+                SystemUIHelper.onBackPressed(mActivity);
+            }
+        };
+
         close_button.setOnClickListener(click);
         max_button.setOnClickListener(click);
         min_button.setOnClickListener(click);
         more_button.setOnClickListener(click);
+        back_button.setOnClickListener(backClick);
         header.setOnTouchListener(new Movable(mActivity.getWindow(), true));
 
         if(mTintedTitlebar) header.setBackgroundColor(mTitleBarColor);
@@ -501,11 +559,12 @@ public class MovableOverlayView extends RelativeLayout {
         int DEFAULT_TITLEBAR_COLOR = Color.BLACK;
 
         TypedValue a = new TypedValue();
-        if(!mActivity.getTheme().resolveAttribute(android.R.attr.colorPrimaryDark, a, true))
+        if(!mActivity.getTheme().resolveAttribute(android.R.attr.colorPrimaryDark, a, true)) {
             return DEFAULT_TITLEBAR_COLOR;
+        }
         if (a.type >= TypedValue.TYPE_FIRST_COLOR_INT && a.type <= TypedValue.TYPE_LAST_COLOR_INT) {
-        // it is a color
-        return a.data;
+            // it is a color
+            return a.data;
         }
         return DEFAULT_TITLEBAR_COLOR;
     }
@@ -700,6 +759,7 @@ public class MovableOverlayView extends RelativeLayout {
         }
     }
 
+    @SuppressWarnings({"BooleanParameter", "WeakerAccess"})
     public void setTitleBarVisibility(boolean visible) {
         if (mTitleBarHeader != null) {
             mTitleBarHeader.setVisibility(visible ? View.VISIBLE : View.GONE);
@@ -721,6 +781,7 @@ public class MovableOverlayView extends RelativeLayout {
         }
     }
 
+    @SuppressWarnings("WeakerAccess")
     public void setWindowBorder(int color, int thickness) {
         if(mTintedTitlebar && mPref.getBoolean(Common.KEY_TINTED_TITLEBAR_BORDER_TINT, Common.DEFAULT_TINTED_TITLEBAR_BORDER_TINT))
             color = mTitleBarColor;
@@ -731,6 +792,7 @@ public class MovableOverlayView extends RelativeLayout {
         }
     }
 
+    @SuppressWarnings({"FinalStaticMethod", "WeakerAccess"})
     public static final RelativeLayout.LayoutParams getParams() {
         final RelativeLayout.LayoutParams paramz = new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -738,6 +800,7 @@ public class MovableOverlayView extends RelativeLayout {
         return paramz;
     }
 
+    @SuppressWarnings("WeakerAccess")
     public void closeApp() {
         try {
             /* Work-around for bug:
@@ -753,22 +816,29 @@ public class MovableOverlayView extends RelativeLayout {
             //ignore
         }
         if (mPref.getBoolean(Common.KEY_WINDOW_TITLEBAR_SINGLE_WINDOW,
-                Common.DEFAULT_WINDOW_TITLEBAR_SINGLE_WINDOW)
-                && Build.VERSION.SDK_INT >= 16) {
-                if(MovableWindow.mWindowHolder!=null && MovableWindow.mWindowHolder.mActivity!=null)
-                    MovableWindow.mWindowHolder.mActivity.finishAffinity();
-                else
-                    mActivity.finishAffinity();
+                Common.DEFAULT_WINDOW_TITLEBAR_SINGLE_WINDOW)) {
+            if (MovableWindow.mWindowHolder != null
+                    && MovableWindow.mWindowHolder.mActivity != null) {
+                MovableWindow.mWindowHolder.mActivity.finishAffinity();
+            } else {
+                mActivity.finishAffinity();
+            }
         } else {
-            if(MovableWindow.mWindowHolder!=null && MovableWindow.mWindowHolder.mActivity!=null)
+            if (MovableWindow.mWindowHolder != null
+                    && MovableWindow.mWindowHolder.mActivity != null)
                 MovableWindow.mWindowHolder.mActivity.finish();
             else
                 mActivity.finish();
         }
     }
 
+    @SuppressWarnings({"BooleanParameter", "WeakerAccess"})
     public void setRootNamespace(boolean isRoot) {
         XposedHelpers.callMethod(this, "setIsRootNamespace", isRoot);
+    }
+
+    private void onBackPressedActivity(Activity activity) {
+        activity.onBackPressed();
     }
 
     public int getTitleBarHeight(){

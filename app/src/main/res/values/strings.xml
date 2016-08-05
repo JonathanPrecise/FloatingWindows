@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<!--suppress LongLine -->
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <string name="app_name">FloatWin Extension for DesktopMode</string>
     <string name="launcher_name">FloatWin Settings</string>
@@ -163,8 +164,8 @@
     <string name="pref_movable_moving_move_pos_summary">When resizing or moving a window, windows of the same app behind it will also be updated.</string>
     <string name="pref_movable_resizing_live_update_title">Live Resize Updating </string>
     <string name="pref_movable_resizing_live_update_summary">When resizing windows, contents will refresh immediately instead of showing an outline.\n(Unstable, may reduce performance)</string>
-    <string name="pref_movable_resizing_aero_snap_enabled_title">Snap-in Windows</string>
-    <string name="pref_movable_resizing_aero_snap_enabled_summary">Drag a window to the any 4 edges of the screen to resize it to the respective half of the screen, similar to Aero Snap in Windows OS.</string>
+    <string name="pref_movable_resizing_aero_snap_enabled_title">GridSnap</string>
+    <string name="pref_movable_resizing_aero_snap_enabled_summary">Drag a window to the any 4 edges of the screen to resize it to the respective half of the screen. Useful to have side-by-side windows.</string>
     <string name="pref_movable_resizing_aero_snap_delay_title">Snap-in Delay</string>
     <string name="pref_movable_resizing_aero_snap_delay_summary">Delay in milliseconds before snap-in outline is shown.</string>
     <string name="pref_aero_focus_frame_title">Focused Window Frame</string>
@@ -326,8 +327,8 @@
     <string name="pref_statusbar_taskbar_number_title">Max Number of Apps</string>
 
     <!-- FloatDot -->
-    <string name="floatdot_color_outer1_title">FloatDot Snap Color</string>
-    <string name="floatdot_color_inner1_title">FloatDot Snap Inner Color</string>
+    <string name="floatdot_color_outer1_title">GridSnap Handle Color</string>
+    <string name="floatdot_color_inner1_title">GridSnap Handle Inner Color</string>
     <string name="floatdot_color_outer2_title">FloatDot Launcher Color</string>
     <string name="floatdot_color_inner2_title">FloatDot Launcher Inner Color</string>
     <string name="pref_floatdot_single_color_snap_title">Single Color for FloatDot Snap</string>
@@ -337,7 +338,7 @@
     <string name="pref_floatdot_size_title">Floating Dots\' Size</string>
     <string name="pref_floatdot_alpha_title">Transparency</string>
     <string name="pref_floatdot_launcher_title">Enable FloatDot Launcher</string>
-    <string name="pref_floatdot_title">DEPRECATED: FloatDot settings</string>
+    <string name="pref_floatdot_title">GridSnap settings</string>
     <string name="floatdot_action_close">Close</string>
     <string name="floatdot_action_movable">Restart as movable</string>
     <string name="floatdot_action_fullscreen">Restart as fullscreen</string>
@@ -346,6 +347,6 @@
     <string name="floatdot_action_movable_top">Restart top app as movable</string>
     <string name="floatdot_action_fullscreen_top">Restart top app as fullscreen</string>
     <string name="searchButton_search">Search</string>
-    <string name="br_api_key">745I-GHW4-7HGF76FG4WU37IF4-QG73-RGWU</string>
+    <string name="br_api_key" tools:ignore="TypographyDashes">745I-GHW4-7HGF76FG4WU37IF4-QG73-RGWU</string>
 
 </resources>

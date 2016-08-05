@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:summary=""
     android:title="Moving and resizing">
-	
-	<PreferenceCategory android:title="Moving">
-	<CheckBoxPreference
-		android:defaultValue="true"
-		android:key="window_moving_move_ab_enabled"
-		android:summary="Drag windows by actionbar"
-		android:title="Actionbar to move" />
-	<com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
+
+    <PreferenceCategory android:title="Moving">
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="window_moving_move_ab_enabled"
+        android:summary="Drag windows by actionbar"
+        android:title="Actionbar to move" />
+    <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
         defaultValue="50"
         maximum="150"
         minimum="0"
@@ -16,7 +16,7 @@
         android:key="move_max_range"
         android:summary="@string/pref_move_max_range_summary"
         android:title="@string/pref_move_max_range_title" />
-	</PreferenceCategory>
+    </PreferenceCategory>
     <PreferenceCategory android:title="Resizing">
         <CheckBoxPreference
             android:defaultValue="false"
