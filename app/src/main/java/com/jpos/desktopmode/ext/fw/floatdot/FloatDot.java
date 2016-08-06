@@ -165,8 +165,6 @@ public class FloatDot {
             mWindowManager.addView(image, paramsF);
             mFloatLauncher.setAnchor(image);
             mViewOn = true;
-        } catch (SecurityException e) {
-
         } catch (Throwable t) {
             t.printStackTrace();
         }

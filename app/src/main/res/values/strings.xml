@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--suppress LongLine -->
+<?xml version="1.0" encoding="utf-8"?><!--suppress LongLine -->
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <string name="app_name">FloatWin Extension for DesktopMode</string>
@@ -347,6 +346,17 @@
     <string name="floatdot_action_movable_top">Restart top app as movable</string>
     <string name="floatdot_action_fullscreen_top">Restart top app as fullscreen</string>
     <string name="searchButton_search">Search</string>
+
     <string name="br_api_key" tools:ignore="TypographyDashes">745I-GHW4-7HGF76FG4WU37IF4-QG73-RGWU</string>
+
+    <!-- Overlay for Android M+ -->
+    <string name="overlay_needed_title">Special permission needed</string>
+    <string name="overlay_needed_message">Since Android 6.0, we need you to grant a special permission in order to work correctly.\n\nDon\'t trust us? This project is open source, so you can see our code in https://github.com/JonathanPrecise/FloatingWindows .</string>
+
+    <!-- App intro slides -->
+    <string name="slide1_title">The productivity of a Desktop…</string>
+    <string name="slide1_message">Compare two documents, side by side. Have a web page open as you write an article. And more!</string>
+    <string name="slide2_title">… with the portability of your phone or tablet</string>
+    <string name="slide2_message">Use it at home, put it in you pocket and take it with you to another country.</string>
 
 </resources>

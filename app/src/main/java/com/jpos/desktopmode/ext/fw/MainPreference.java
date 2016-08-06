@@ -11,10 +11,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.crashlytics.android.Crashlytics;
 import com.jpos.desktopmode.ext.fw.prefs.BehaviorFragment;
 import com.jpos.desktopmode.ext.fw.prefs.MainFragment;
 import com.jpos.desktopmode.ext.fw.prefs.MovingFragment;
 import com.jpos.desktopmode.ext.fw.prefs.OverlayFragment;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * This is an activity which shows each Settings fragment in the ViewPager.
@@ -32,6 +34,7 @@ public class MainPreference extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); // Call parent activity
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_viewpager); // Set layout
 
         /**
