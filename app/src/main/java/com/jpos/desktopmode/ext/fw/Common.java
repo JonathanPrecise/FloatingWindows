@@ -12,6 +12,7 @@ public class Common {
     public static final String THIS_MOD_PACKAGE_NAME = Common.class.getPackage().getName();
     public static final String PREFERENCE_MAIN_FILE = THIS_MOD_PACKAGE_NAME + "_general";
     public static final String PREFERENCE_PACKAGES_FILE = THIS_MOD_PACKAGE_NAME + "_packages";
+    public static final String PREFERENCE_CRASHLYTICS = THIS_MOD_PACKAGE_NAME + "_CRASHLYTICS";
 
     /* packages types */
     public static final int PACKAGE_WHITELIST = 1;
@@ -216,7 +217,7 @@ public class Common {
     public static final int TITLEBAR_ICON_WIN = 2;
     public static final int TITLEBAR_ICON_ANDROIDY = 3;
     public static final int TITLEBAR_ICON_NOUGATY = 4;
-    public static final int TITLEBAR_ICON_DEFAULT = TITLEBAR_ICON_NOUGATY;
+    public static final int TITLEBAR_ICON_DEFAULT = TITLEBAR_ICON_ANDROIDY;
 
     /*Floating dot themes */
     public static final String KEY_FLOATDOT_LAUNCHER_ENABLED = "floatdot_launcher_enabled";

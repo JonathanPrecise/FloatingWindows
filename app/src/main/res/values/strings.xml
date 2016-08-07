@@ -358,5 +358,7 @@
     <string name="slide1_message">Compare two documents, side by side. Have a web page open as you write an article. And more!</string>
     <string name="slide2_title">… with the portability of your phone or tablet</string>
     <string name="slide2_message">Use it at home, put it in you pocket and take it with you to another country.</string>
+    <string name="crash_message">Ok, this was not supposed to happen. Don\'t worry though: we have been notified, and shall proceed to fixing this immediately. However, we need you to do us a favor:\nOnce the crash dialog pops up, re-open the app to send us the required information.</string>
+    <string name="crash_title">Uh oh!</string>
 
 </resources>

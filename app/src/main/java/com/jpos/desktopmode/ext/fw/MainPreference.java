@@ -5,18 +5,15 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.crashlytics.android.Crashlytics;
 import com.jpos.desktopmode.ext.fw.prefs.BehaviorFragment;
 import com.jpos.desktopmode.ext.fw.prefs.MainFragment;
 import com.jpos.desktopmode.ext.fw.prefs.MovingFragment;
 import com.jpos.desktopmode.ext.fw.prefs.OverlayFragment;
-import io.fabric.sdk.android.Fabric;
 
 /**
  * This is an activity which shows each Settings fragment in the ViewPager.
@@ -34,7 +31,6 @@ public class MainPreference extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); // Call parent activity
-        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_viewpager); // Set layout
 
         /**
@@ -160,16 +156,7 @@ public class MainPreference extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TabLayout pts = (TabLayout) findViewById(R.id.pager_title_strip);
-        pts.setupWithViewPager(viewPager, true);
-
-        ActionBar bar = getSupportActionBar();
-
-        try {
-            //noinspection ConstantConditions
-            bar.setElevation(4f);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        pts.setupWithViewPager(viewPager);
 
         /**
          * Test if the Xposed Module is active.
