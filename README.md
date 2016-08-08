@@ -13,7 +13,7 @@ FloatingWindows extension for DM. **Requires Xposed and a rooted smartphone/tabl
 This is based on [XFHW3](https://github.com/shooash/XHFW3) (a fork of the now unmantained [XHaloFloatingWindow](https://github.com/zst123/XHaloFloatingWindow)). Credits to @shooash for creating XHFW3, and to @zst123 for creating the original XHaloFloatingWindow!
 
 ## Disclaimer
-As any Xposed module, this may brick your phone, cause bootloops, make you go mad, or cause a catastrophe. It will probably not work for SAMSUNG devices with TouchWiz, it *may* cause conflicts with some LG tablets, and it is known to **not** work on my pencil sharpener.
+This will probably not work for SAMSUNG devices with TouchWiz, and it *may* cause conflicts with some LG tablets. And as any Xposed module, this may brick your phone, cause bootloops, make you go mad, or cause a catastrophe.
 
 Jokes aside, be careful with this. We take no responsibility at all if anything weird or undesired happens.
 
