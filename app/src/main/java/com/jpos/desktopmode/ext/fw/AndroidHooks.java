@@ -1,4 +1,5 @@
 package com.jpos.desktopmode.ext.fw;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -370,7 +371,12 @@ public class AndroidHooks
         XposedBridge.hookAllMethods(hookClass, "setAppStartingWindow", new XC_MethodHook() {
                 protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                     if (!MWRegister.isMovable((String) param.args[1])) return;
-                    //if (!mHasHaloFlag && (MovableWindow.mWindowHolder==null || !MovableWindow.mWindowHolder.isFloating)) return;
+                    //if (!mHasHaloFlag
+                    //      && (MovableWindow.mWindowHolder == null
+                    //              || !MovableWindow.mWindowHolder.isFloating)) {
+                    //                  return;
+                    //}
+                    //noinspection RedundantCast
                     if ("android".equals((String) param.args[1])) return;
                     // Change boolean "createIfNeeded" to FALSE
                     if (param.args[param.args.length - 1] instanceof Boolean) {
@@ -384,6 +390,7 @@ public class AndroidHooks
             });
     }
 
+    @SuppressWarnings("WeakerAccess")
     public static void hookActivityStack(Class<?> hookClass) throws Throwable {
         XposedBridge.hookAllMethods(hookClass, "resumeTopActivityLocked", new XC_MethodHook() {
                 Object previous = null;

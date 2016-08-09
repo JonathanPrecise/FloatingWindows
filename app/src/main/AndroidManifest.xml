@@ -1,87 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	package="com.jpos.desktopmode.ext.fw"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.jpos.desktopmode.ext.fw"
     android:installLocation="internalOnly">
-    <!--android:versionCode="1"
+<!--android:versionCode="1"
     android:versionName="0.1-alpha0"-->
-
-	<!--uses-sdk
+    <!--uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="24" /-->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.REORDER_TASKS" />
-	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-	<uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
-		tools:ignore="ProtectedPermissions" />
-	
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-		tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        android:name=".FloatingWindowsApp">
         <meta-data
             android:name="xposedmodule"
             android:value="true" />
         <meta-data
             android:name="xposedminversion"
             android:value="52" />
+        <!--suppress LongLine -->
         <meta-data
             android:name="xposeddescription"
             android:value="Desktop Mode Floating Windows, based on XHFW3, which itself is based on XHaloFloatingWindow" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="18119f87171d8f5cdb8b66a1d4863be9ec8482bc" />
 
         <activity
-            android:name="com.jpos.desktopmode.ext.fw.MainPreference"
-			android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/launcher_name" >
+            android:name=".MainPreference"
+            android:label="@string/launcher_name"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-		<activity
-            android:name="com.jpos.desktopmode.ext.fw.prefs.TitleBarSettingsActivity"
-			android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
-            android:label="@string/pref_movable_sub_titlebar_title" >
+        <activity
+            android:name=".prefs.TitleBarSettingsActivity"
+            android:label="@string/pref_movable_sub_titlebar_title"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-		<activity
-			android:name="com.jpos.desktopmode.ext.fw.prefs.FloatDotActivity"
-			android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
-			android:label="@string/pref_floatdot_title" >
-		<intent-filter>
-			<action android:name="android.intent.action.MAIN" />
-		</intent-filter>
+        <activity
+            android:name=".prefs.FloatDotActivity"
+            android:label="@string/pref_floatdot_title"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         </activity>
-		<activity
-			android:name="com.jpos.desktopmode.ext.fw.prefs.LauncherListActivity"
-			android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
-			android:label="@string/pref_launcher_title" >
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-			</intent-filter>
+        <activity
+            android:name=".prefs.LauncherListActivity"
+            android:label="@string/pref_launcher_title"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         </activity>
-		<receiver android:name="com.jpos.desktopmode.ext.fw.floatdot.BootReceiver">
-			<intent-filter>  
-				<action android:name="android.intent.action.BOOT_COMPLETED" />
-			</intent-filter>  
-		</receiver>
-		<receiver android:name="com.jpos.desktopmode.ext.fw.floatdot.CallReceiver"
-			tools:ignore="ExportedReceiver">
-			<intent-filter>
-				<action android:name="persistent.XHFWService" />
-			</intent-filter>  
-		</receiver>
-		<service android:name="com.jpos.desktopmode.ext.fw.floatdot.XHFWService" android:process=":remote"
-			tools:ignore="ExportedService">
-			<intent-filter>
-				<action android:name="service.XHFWService" />
-			</intent-filter>
-		</service>
-    </application>
+        <activity
+            android:name=".FWIntroActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".AboutAppActivity"/>
+        <activity
+            android:name=".ExceptionHandlerActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:process=":error_activity">
+            <intent-filter>
+                <!-- ... -->
+                <action android:name="cat.ereza.customactivityoncrash.ERROR" />
+            </intent-filter>
+        </activity>
 
+        <receiver android:name=".floatdot.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".floatdot.CallReceiver"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="persistent.XHFWService" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".floatdot.XHFWService"
+            android:process=":remote"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="service.XHFWService" />
+            </intent-filter>
+        </service>
+    </application>
 </manifest>

@@ -12,6 +12,7 @@ public class Common {
     public static final String THIS_MOD_PACKAGE_NAME = Common.class.getPackage().getName();
     public static final String PREFERENCE_MAIN_FILE = THIS_MOD_PACKAGE_NAME + "_general";
     public static final String PREFERENCE_PACKAGES_FILE = THIS_MOD_PACKAGE_NAME + "_packages";
+    public static final String PREFERENCE_CRASHLYTICS = THIS_MOD_PACKAGE_NAME + "_CRASHLYTICS";
 
     /* packages types */
     public static final int PACKAGE_WHITELIST = 1;
@@ -100,12 +101,14 @@ public class Common {
     public static final String KEY_FLOATING_FLAG = "floating_flag";
     public static final String KEY_FORCE_OPEN_ALT_GRAVITY = "window_force_snap";
     public static final String KEY_MOVE_MAX_RANGE = "move_max_range";
+    public static final String KEY_USER_FIRSTRUN = "first_run";
+    public static final String KEY_CRASHLYTICS_IS_UID_GEN = "IS_USERID_GEN";
+    public static final String KEY_CRASHLYTICS_USERID = "USERID_BASE";
 
     /* Preference defaults */
     public static final float DEFAULT_ALPHA = 1f;
 
     // FIXME: 7/27/2016 Finish removing and make sure that nothing happens
-    //public static final float DEFAULT_DIM = 0.25f;
     public static final float DEFAULT_DIM = 0f;
     public static final boolean DEFAULT_MAXIMIZE_ALL = false;
     public static final float DEFAULT_PORTRAIT_WIDTH = 0.95f;
@@ -140,19 +143,19 @@ public class Common {
     public static final int DEFAULT_WINDOW_TITLEBAR_ICONS_TYPE = Common.TITLEBAR_ICON_DEFAULT;
     public static final boolean DEFAULT_WINDOW_TRIANGLE_ENABLE = true;
     public static final String DEFAULT_WINDOW_TRIANGLE_COLOR = "FFFFFF";
-    public static final float DEFAULT_WINDOW_TRIANGLE_ALPHA = 0.5f;
-    public static final int DEFAULT_WINDOW_TRIANGLE_SIZE = 30;
+    public static final float DEFAULT_WINDOW_TRIANGLE_ALPHA = 0.0f;
+    public static final int DEFAULT_WINDOW_TRIANGLE_SIZE = 50;
     public static final String DEFAULT_WINDOW_TRIANGLE_CLICK_ACTION = "0";
-    public static final String DEFAULT_WINDOW_TRIANGLE_LONGPRESS_ACTION = "1";
+    public static final String DEFAULT_WINDOW_TRIANGLE_LONGPRESS_ACTION = "0";
     public static final boolean DEFAULT_WINDOW_TRIANGLE_RESIZE_ENABLED = true;
     public static final boolean DEFAULT_WINDOW_TRIANGLE_DRAGGING_ENABLED = false;
-    public static final boolean DEFAULT_WINDOW_QUADRANT_ENABLE = false;
+    public static final boolean DEFAULT_WINDOW_QUADRANT_ENABLE = true;
     public static final String DEFAULT_WINDOW_QUADRANT_COLOR = "FFFFFF";
-    public static final float DEFAULT_WINDOW_QUADRANT_ALPHA = 0.5f;
-    public static final int DEFAULT_WINDOW_QUADRANT_SIZE = 30;
+    public static final float DEFAULT_WINDOW_QUADRANT_ALPHA = 0.0f;
+    public static final int DEFAULT_WINDOW_QUADRANT_SIZE = 50;
     public static final String DEFAULT_WINDOW_QUADRANT_CLICK_ACTION = "0";
     public static final String DEFAULT_WINDOW_QUADRANT_LONGPRESS_ACTION = "0";
-    public static final boolean DEFAULT_WINDOW_QUADRANT_RESIZE_ENABLED = false;
+    public static final boolean DEFAULT_WINDOW_QUADRANT_RESIZE_ENABLED = true;
     public static final boolean DEFAULT_WINDOW_QUADRANT_DRAGGING_ENABLED = false;
     public static final boolean DEFAULT_WINDOW_BORDER_ENABLED = true;
     public static final String DEFAULT_WINDOW_BORDER_COLOR = "000000";
@@ -162,11 +165,11 @@ public class Common {
     public static final boolean DEFAULT_TINTED_TITLEBAR_BORDER_TINT = true;
     public static final boolean DEFAULT_TINTED_TITLEBAR_CORNER_TINT = true;
     public static final boolean DEFAULT_DISABLE_AUTO_CLOSE = true;
-    public static final boolean DEFAULT_SHOW_APP_IN_RECENTS = true;
+    public static final boolean DEFAULT_SHOW_APP_IN_RECENTS = false;
     public static final boolean DEFAULT_FORCE_APP_IN_RECENTS = false;
-    public static final boolean DEFAULT_MINIMIZE_APP_TO_STATUSBAR = true;
+    public static final boolean DEFAULT_MINIMIZE_APP_TO_STATUSBAR = false;
     public static final boolean DEFAULT_FLOATING_QUICK_SETTINGS = false;
-    public static final boolean DEFAULT_FORCE_OPEN_APP_ABOVE_HALO = false;
+    public static final boolean DEFAULT_FORCE_OPEN_APP_ABOVE_HALO = true;
     public static final String DEFAULT_WHITEBLACKLIST_OPTIONS = "1";
     public static final boolean DEFAULT_STATUSBAR_TASKBAR_ENABLED = false;
     public static final boolean DEFAULT_STATUSBAR_TASKBAR_RUNNING_APPS_ENABLED = true;
@@ -213,15 +216,16 @@ public class Common {
     /* Titlebar themes */
     public static final int TITLEBAR_ICON_NONE = 0;
     public static final int TITLEBAR_ICON_ORIGINAL = 1;
-    public static final int TITLEBAR_ICON_BachMinuetInG = 2;
-    public static final int TITLEBAR_ICON_SSNJR2002 = 3;
-    public static final int TITLEBAR_ICON_DEFAULT = TITLEBAR_ICON_BachMinuetInG;
+    public static final int TITLEBAR_ICON_WIN = 2;
+    public static final int TITLEBAR_ICON_ANDROIDY = 3;
+    public static final int TITLEBAR_ICON_NOUGATY = 4;
+    public static final int TITLEBAR_ICON_DEFAULT = TITLEBAR_ICON_ANDROIDY;
 
     /*Floating dot themes */
     public static final String KEY_FLOATDOT_LAUNCHER_ENABLED = "floatdot_launcher_enabled";
-    public static final boolean DEFAULT_FLOATDOT_LAUNCHER_ENABLED = true;
+    public static final boolean DEFAULT_FLOATDOT_LAUNCHER_ENABLED = false;
     public static final String KEY_FLOATDOT_COLOR_OUTER1 = "floatdot_color_outer1";
-    public static final String DEFAULT_FLOATDOT_COLOR_OUTER1 = "000000";
+    public static final String DEFAULT_FLOATDOT_COLOR_OUTER1 = "00b0ff";
     public static final String KEY_FLOATDOT_COLOR_INNER1 = "floatdot_color_inner1";
     public static final String DEFAULT_FLOATDOT_COLOR_INNER1 = "008080";
     public static final String KEY_FLOATDOT_COLOR_OUTER2 = "floatdot_color_outer2";
@@ -243,8 +247,4 @@ public class Common {
     public static final int DEFAULT_FLOATDOT_LAUNCHER_Y = 20;
     public static final String UPDATE_FLOATLAUNCHER_PARAMS = "update_floatlauncher_params";
     public static final String RESTART_ACTIVITY = THIS_MOD_PACKAGE_NAME + "restart_activity";
-
-
-
-
 }

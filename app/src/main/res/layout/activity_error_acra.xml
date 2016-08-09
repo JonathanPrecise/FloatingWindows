@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_error_acra"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:showIn=".ExceptionHandlerActivity"
+    android:padding="32dp">
+
+    <TextView
+        android:text="@string/error_splash"
+        android:layout_width="match_parent"
+        android:paddingTop="96dp"
+        android:paddingBottom="32dp"
+        android:textSize="38sp"
+        android:textColor="@color/absWhite"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleTextView"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:text="@string/gen_error_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:textColor="@color/absWhite"
+        android:id="@+id/genErrorMessage" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?buttonBarButtonStyle"
+        android:text="@string/restart"
+        android:id="@+id/restartApp"
+        android:textColor="@color/absWhite"/>
+</LinearLayout>

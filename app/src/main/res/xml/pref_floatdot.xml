@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidUnknownAttribute -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:summary="">
     <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
             defaultValue="26"
@@ -6,52 +7,54 @@
             minimum="10"
             android:key="floatdot_size"
             android:title="@string/pref_floatdot_size_title" />
+
     <com.jpos.desktopmode.ext.fw.prefs.WidgetFloatPercentage
-		defaultValue="0.7"
-		maximum="1"
-		minimum="0"
-		android:key="floatdot_alpha"
-		android:title="@string/pref_floatdot_alpha_title" />
-	<CheckBoxPreference
-		android:defaultValue="false"
-		android:key="floatdot_single_color_snap"
-		android:title="@string/pref_floatdot_single_color_snap_title"
-		android:summary="@string/pref_floatdot_single_color_snap_summary"
-		android:disableDependentsState="true"
-	/>
-	<com.jpos.desktopmode.ext.fw.prefs.ColorPicker
-		defaultValue="000000"
-		android:key="floatdot_color_outer1"
-		android:summary=""
-		android:title="@string/floatdot_color_outer1_title" />
-	<com.jpos.desktopmode.ext.fw.prefs.ColorPicker
-		defaultValue="008080"
-		android:dependency="floatdot_single_color_snap"
-		android:key="floatdot_color_inner1"
-		android:summary=""
-		android:title="@string/floatdot_color_inner1_title" />
-	<SwitchPreference
-		android:defaultValue="true"
-		android:key="floatdot_launcher_enabled"
-		android:title="@string/pref_floatdot_launcher_title"
-		android:summary=""
-		/>
-	<CheckBoxPreference
-		android:defaultValue="false"
-		android:key="floatdot_single_color_launcher"
-		android:title="@string/pref_floatdot_single_color_launcher_title"
-		android:summary="@string/pref_floatdot_single_color_launcher_summary"
-		android:disableDependentsState="true"
-	/>
-	<com.jpos.desktopmode.ext.fw.prefs.ColorPicker
-		defaultValue="000000"
-		android:key="floatdot_color_outer2"
-		android:summary=""
-		android:title="@string/floatdot_color_outer2_title" />
-	<com.jpos.desktopmode.ext.fw.prefs.ColorPicker
-		defaultValue="00FF00"
-		android:dependency="floatdot_single_color_launcher"
-		android:key="floatdot_color_inner2"
-		android:summary=""
-		android:title="@string/floatdot_color_inner2_title" />
+        defaultValue="0.7"
+        maximum="1"
+        minimum="0"
+        android:key="floatdot_alpha"
+        android:title="@string/pref_floatdot_alpha_title" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="floatdot_single_color_snap"
+        android:title="@string/pref_floatdot_single_color_snap_title"
+        android:summary="@string/pref_floatdot_single_color_snap_summary"
+        android:disableDependentsState="true"
+    />
+    <com.jpos.desktopmode.ext.fw.prefs.ColorPicker
+        defaultValue="00b0ff"
+        android:key="floatdot_color_outer1"
+        android:summary=""
+        android:title="@string/floatdot_color_outer1_title" />
+    <com.jpos.desktopmode.ext.fw.prefs.ColorPicker
+        defaultValue="008080"
+        android:dependency="floatdot_single_color_snap"
+        android:key="floatdot_color_inner1"
+        android:summary=""
+        android:title="@string/floatdot_color_inner1_title" />
+    <!--SwitchPreference
+        android:defaultValue="true"
+        android:key="floatdot_launcher_enabled"
+        android:title="@string/pref_floatdot_launcher_title"
+        android:summary=""
+        />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="floatdot_single_color_launcher"
+        android:title="@string/pref_floatdot_single_color_launcher_title"
+        android:summary="@string/pref_floatdot_single_color_launcher_summary"
+        android:disableDependentsState="true"
+    />
+    <com.jpos.desktopmode.ext.fw.prefs.ColorPicker
+        defaultValue="000000"
+        android:key="floatdot_color_outer2"
+        android:summary=""
+        android:title="@string/floatdot_color_outer2_title" />
+    <com.jpos.desktopmode.ext.fw.prefs.ColorPicker
+        defaultValue="00FF00"
+        android:dependency="floatdot_single_color_launcher"
+        android:key="floatdot_color_inner2"
+        android:summary=""
+        android:title="@string/floatdot_color_inner2_title" /-->
 </PreferenceScreen>

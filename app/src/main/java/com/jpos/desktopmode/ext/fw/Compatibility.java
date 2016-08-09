@@ -41,23 +41,6 @@ public class Compatibility
         Hooks() {
             int SDK = Build.VERSION.SDK_INT;
             switch (SDK) {
-                case 17:
-                    ActivityRecord_Intent = 4;
-                    ActivityRecord_ActivityInfo = 6;
-                    ActivityRecord_ActivityStack = 1;
-                    ActivityRecord_StackSupervisor = -1;
-                    TaskRecord_Intent = 2;
-                    ActivityRecord_TaskHistory = "mHistory";
-                    Internal_PhoneWindow = "com.android.internal.policy.impl.PhoneWindow";
-                    break;
-                case 18:
-                    ActivityRecord_Intent = 5;
-                    ActivityRecord_ActivityInfo = 7;
-                    ActivityRecord_ActivityStack = 1;
-                    ActivityRecord_StackSupervisor = -1;
-                    ActivityRecord_TaskHistory = "mHistory";
-                    Internal_PhoneWindow = "com.android.internal.policy.impl.PhoneWindow";
-                    break;
                 case 19:
                 case 20:
                 case 21:
@@ -80,6 +63,27 @@ public class Compatibility
                     ActivityRecord_TaskHistory = "mTaskHistory";
                     Internal_PhoneWindow = "com.android.internal.policy.PhoneWindow";
                     break;
+
+                /* DEPRECATED
+
+                case 17:
+                    ActivityRecord_Intent = 4;
+                    ActivityRecord_ActivityInfo = 6;
+                    ActivityRecord_ActivityStack = 1;
+                    ActivityRecord_StackSupervisor = -1;
+                    TaskRecord_Intent = 2;
+                    ActivityRecord_TaskHistory = "mHistory";
+                    Internal_PhoneWindow = "com.android.internal.policy.impl.PhoneWindow";
+                    break;
+                case 18:
+                    ActivityRecord_Intent = 5;
+                    ActivityRecord_ActivityInfo = 7;
+                    ActivityRecord_ActivityStack = 1;
+                    ActivityRecord_StackSupervisor = -1;
+                    ActivityRecord_TaskHistory = "mHistory";
+                    Internal_PhoneWindow = "com.android.internal.policy.impl.PhoneWindow";
+                    break;
+                 */
             }
         }
     }

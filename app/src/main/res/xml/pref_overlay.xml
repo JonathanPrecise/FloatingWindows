@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:summary=""
     android:title="@string/pref_overlay_title">
-	
+
 
     <PreferenceCategory android:title="Titlebar">
         <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
@@ -11,13 +11,13 @@
             android:key="window_moving_titlebar_size"
             android:summary="@string/pref_movable_titlebar_size_summary"
             android:title="@string/pref_movable_titlebar_size_title" />
-        <SwitchPreference
-            android:defaultValue="true"
+        <!--<SwitchPreference
+            android:defaultValue="false"
             android:key="window_moving_titlebar_separator_enabled"
             android:summary="@string/pref_movable_titlebar_separator_enabled_summary"
             android:title="@string/pref_movable_titlebar_separator_enabled_title" />
         <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
-            defaultValue="2"
+            defaultValue="0"
             maximum="120"
             minimum="0"
             android:dependency="window_moving_titlebar_separator_enabled"
@@ -29,30 +29,30 @@
             android:dependency="window_moving_titlebar_separator_enabled"
             android:key="window_moving_titlebar_separator_color"
             android:summary="@string/pref_movable_titlebar_separator_color_summary"
-            android:title="@string/pref_movable_titlebar_separator_color_title" />
-		<CheckBoxPreference
-			android:defaultValue="false"
-			android:key="window_moving_titlebar_single_window"
-			android:summary="@string/pref_movable_titlebar_single_window_summary"
-			android:title="@string/pref_movable_titlebar_single_window_title" />
-		<Preference
+            android:title="@string/pref_movable_titlebar_separator_color_title" /-->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="window_moving_titlebar_single_window"
+            android:summary="@string/pref_movable_titlebar_single_window_summary"
+            android:title="@string/pref_movable_titlebar_single_window_title" />
+        <Preference
             android:key="titlebar_theme"
             android:summary="Choose appearance"
             android:title="Theme" />
-	</PreferenceCategory>
+    </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_floatdot_title">
-		<Preference
+        <Preference
             android:key="floatdot_theme"
-            android:summary="Change those tiny launcher dots"
-            android:title="FloatDot Theme" />
-		<Preference
-			android:key="launcher_list"
-			android:summary="@string/pref_launcher_summary"
-			android:title="@string/pref_launcher_title" />
-	</PreferenceCategory>
-	
-	<PreferenceCategory android:title="Triangle">
+            android:summary="Change the tiny circle handles"
+            android:title="GridSnap Handle Theme" />
+        <!--Preference
+            android:key="launcher_list"
+            android:summary="@string/pref_launcher_summary"
+            android:title="@string/pref_launcher_title" /-->
+    </PreferenceCategory>
+
+    <!--PreferenceCategory android:title="Triangle">
         <SwitchPreference
             android:defaultValue="true"
             android:key="window_triangle_enabled"
@@ -77,7 +77,7 @@
             android:summary="@string/pref_movable_triangle_color_summary"
             android:title="@string/pref_movable_triangle_color_title" />
         <com.jpos.desktopmode.ext.fw.prefs.WidgetFloatPercentage
-            defaultValue="0.5"
+            defaultValue="0"
             maximum="1"
             minimum="0"
             android:dependency="window_triangle_enabled"
@@ -85,7 +85,7 @@
             android:summary="@string/pref_movable_triangle_alpha_summary"
             android:title="@string/pref_movable_triangle_alpha_title" />
         <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
-            defaultValue="36"
+            defaultValue="50"
             maximum="100"
             minimum="1"
             android:dependency="window_triangle_enabled"
@@ -101,15 +101,15 @@
             android:summary="@string/pref_movable_triangle_sp_action_summary"
             android:title="@string/pref_movable_triangle_sp_action_title" />
         <ListPreference
-            android:defaultValue="1"
+            android:defaultValue="0"
             android:dependency="window_triangle_enabled"
             android:entries="@array/option_movable_corner_entries"
             android:entryValues="@array/option_movable_corner_values"
             android:key="window_triangle_lp_action"
             android:summary="@string/pref_movable_triangle_lp_action_summary"
             android:title="@string/pref_movable_triangle_lp_action_title" />
-	</PreferenceCategory>
-	<PreferenceCategory android:title="Quadrant">
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Quadrant">
         <SwitchPreference
             android:defaultValue="false"
             android:key="window_quadrant_enabled"
@@ -166,8 +166,8 @@
             android:key="window_quadrant_lp_action"
             android:summary="@string/pref_movable_quadrant_lp_action_summary"
             android:title="@string/pref_movable_quadrant_lp_action_title" />
-	</PreferenceCategory>
-	<PreferenceCategory android:title="Border">
+    </PreferenceCategory-->
+    <PreferenceCategory android:title="Border">
         <SwitchPreference
             android:defaultValue="true"
             android:key="window_border_enabled"
@@ -180,7 +180,7 @@
             android:summary="@string/pref_movable_border_color_summary"
             android:title="@string/pref_movable_border_color_title" />
         <com.jpos.desktopmode.ext.fw.prefs.WidgetNumberPicker
-            defaultValue="0"
+            defaultValue="4"
             maximum="100"
             minimum="0"
             android:dependency="window_border_enabled"
@@ -188,7 +188,7 @@
             android:summary="@string/pref_movable_border_thickness_summary"
             android:title="@string/pref_movable_border_thickness_title" />
     </PreferenceCategory>
-	<PreferenceCategory android:title="Tinted overlays">
+    <PreferenceCategory android:title="Tinted overlays">
         <SwitchPreference
             android:defaultValue="true"
             android:key="window_tinted_title_enabled"
@@ -206,5 +206,5 @@
             android:key="window_tinted_title_cornertint"
             android:summary="@string/pref_movable_others_tinted_title_corner_summary"
             android:title="@string/pref_movable_others_tinted_title_corner_title" />
-	</PreferenceCategory>
+    </PreferenceCategory>
 </PreferenceScreen>

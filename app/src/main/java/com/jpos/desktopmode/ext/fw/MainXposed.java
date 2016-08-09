@@ -17,6 +17,7 @@ public class MainXposed implements IXposedHookLoadPackage, IXposedHookZygoteInit
     public static XModuleResources sModRes = null;
     public static XSharedPreferences mPref = null;
     public static XSharedPreferences mPackagesList = null;
+    public static XSharedPreferences mCrashlyticsPref = null;
     public static Compatibility.Hooks mCompatibility =  new Compatibility.Hooks();
 
     /**
@@ -46,8 +47,8 @@ public class MainXposed implements IXposedHookLoadPackage, IXposedHookZygoteInit
     }
 
     /**
-     * Hook into
-     * @param lpparam
+     * Hook into various packages
+     * @param lpparam LoadPackageParam
      * @throws Throwable
      */
     @Override
@@ -72,6 +73,13 @@ public class MainXposed implements IXposedHookLoadPackage, IXposedHookZygoteInit
 
             mPackagesList.reload();
             */
+        }
+        if (mCrashlyticsPref==null) {
+            mCrashlyticsPref = new XSharedPreferences(
+                    Common.THIS_MOD_PACKAGE_NAME,
+                    Common.PREFERENCE_CRASHLYTICS
+            );
+            mCrashlyticsPref.makeWorldReadable();
         }
 
         if (!mPref.getBoolean(Common.KEY_MOVABLE_WINDOW, Common.DEFAULT_MOVABLE_WINDOW))
@@ -171,7 +179,6 @@ public class MainXposed implements IXposedHookLoadPackage, IXposedHookZygoteInit
             // FloatingWindow
             TestingSettingHook.handleLoadPackage(lpparam);
         } else if (lpparam.packageName.equals("com.android.systemui")) {
-            //T0D0 SH0ULDN'T H00K SYSTEMUI
             try {
                 SystemUIOutliner.handleLoadPackage(lpparam);
             } catch(Exception e) {
