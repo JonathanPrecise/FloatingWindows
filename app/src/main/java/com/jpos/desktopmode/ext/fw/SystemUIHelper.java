@@ -13,41 +13,6 @@ public class SystemUIHelper {
         XposedBridgeHelper.logd(Common.LOG_TAG, "Simulating back press");
 
         simulateBack(mActivity);
-
-        /* DEPRECATED
-
-        SystemUIHelper.IS_FROM_DESKTOP_MODE = true;
-
-        KeyEvent keyEvent = new KeyEvent(
-                SystemClock.uptimeMillis(),
-                SystemClock.uptimeMillis(),
-                KeyEvent.ACTION_DOWN,
-                KeyEvent.KEYCODE_BACK,
-                0,
-                0,
-                KeyCharacterMap.VIRTUAL_KEYBOARD,
-                0,
-                KeyEvent.FLAG_FROM_SYSTEM | KeyEvent.FLAG_VIRTUAL_HARD_KEY,
-                InputDevice.SOURCE_KEYBOARD
-        );
-
-        XposedBridgeHelper.logd(Common.LOG_TAG, "KeyEvent built");
-
-        InputManager imanager = (InputManager) XposedHelpers
-                .callStaticMethod(InputManager.class, "getInstance");
-
-        XposedBridgeHelper.logd(Common.LOG_TAG, "Got instance");
-
-        XposedHelpers.callMethod(
-                imanager,
-                "injectInputEvent",
-                new Class[]{
-                        InputEvent.class,
-                        int.class
-                },
-                keyEvent,
-                AndroidHooks.IM_INJECT_INPUT_EVENT_MODE_ASYNC);
-        */
     }
 
     public static void simulateBack(Activity mActivity) {

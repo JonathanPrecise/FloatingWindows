@@ -101,12 +101,14 @@ public class Common {
     public static final String KEY_FLOATING_FLAG = "floating_flag";
     public static final String KEY_FORCE_OPEN_ALT_GRAVITY = "window_force_snap";
     public static final String KEY_MOVE_MAX_RANGE = "move_max_range";
+    public static final String KEY_USER_FIRSTRUN = "first_run";
+    public static final String KEY_CRASHLYTICS_IS_UID_GEN = "IS_USERID_GEN";
+    public static final String KEY_CRASHLYTICS_USERID = "USERID_BASE";
 
     /* Preference defaults */
     public static final float DEFAULT_ALPHA = 1f;
 
     // FIXME: 7/27/2016 Finish removing and make sure that nothing happens
-    //public static final float DEFAULT_DIM = 0.25f;
     public static final float DEFAULT_DIM = 0f;
     public static final boolean DEFAULT_MAXIMIZE_ALL = false;
     public static final float DEFAULT_PORTRAIT_WIDTH = 0.95f;
@@ -245,8 +247,4 @@ public class Common {
     public static final int DEFAULT_FLOATDOT_LAUNCHER_Y = 20;
     public static final String UPDATE_FLOATLAUNCHER_PARAMS = "update_floatlauncher_params";
     public static final String RESTART_ACTIVITY = THIS_MOD_PACKAGE_NAME + "restart_activity";
-
-
-
-
 }

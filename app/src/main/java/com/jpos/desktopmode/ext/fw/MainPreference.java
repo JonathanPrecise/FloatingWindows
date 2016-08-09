@@ -1,13 +1,21 @@
 package com.jpos.desktopmode.ext.fw;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.support.design.widget.TabLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.jpos.desktopmode.ext.fw.prefs.BehaviorFragment;
@@ -28,10 +36,30 @@ public class MainPreference extends AppCompatActivity {
      *     and set the Toolbar as the SupportActionBar.
      * @param savedInstanceState The view's saved instance.
      */
+    @SuppressLint("WorldReadableFiles")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); // Call parent activity
         setContentView(R.layout.activity_viewpager); // Set layout
+
+        if (!DesktopModeHelper.isDesktopModeInstalled(this)) {
+            new AlertDialog.Builder(this)
+                    .setCancelable(false)
+                    .setTitle("Desktop Mode is not installed")
+                    .setMessage("This extension depends on DesktopMode to function correctly. " +
+                            "Please install Desktop Mode, and try again.")
+                    .setPositiveButton(
+                            android.R.string.ok,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    MainPreference.this.finish();
+                                }
+                    })
+                    .create()
+                    .show();
+            return;
+        }
 
         /**
          * Make an adapter for ViewPager
@@ -162,6 +190,50 @@ public class MainPreference extends AppCompatActivity {
          * Test if the Xposed Module is active.
          */
         testSettings(true);
+
+
+        //noinspection deprecation
+        SharedPreferences mPrefs = getSharedPreferences(
+                Common.PREFERENCE_MAIN_FILE,
+                PreferenceActivity.MODE_WORLD_READABLE
+        );
+
+        if (mPrefs.getBoolean(Common.KEY_USER_FIRSTRUN, true)) {
+            Intent starter = new Intent(this, FWIntroActivity.class);
+            this.startActivityForResult(starter, RESULT_FIRST_USER);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if ((requestCode != RESULT_FIRST_USER) || (resultCode != RESULT_CANCELED)) {
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+        finish();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.action_about:
+                AboutAppActivity.start(this);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     /**

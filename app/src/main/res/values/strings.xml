@@ -15,12 +15,12 @@
     <string name="app_advanced">Advanced</string>
     <string name="app_firstrunwarning_title">Disclaimer</string>
     <string name="app_firstrunwarning_summary">This extension modifies the system. Therefore, bad things can happen, including (but not limited to): crashes, bootloops, bricked devices, cosmic explosions, system instability, alien invasions, etc.\n\nJokes aside, we claim no responsibility for any damage caused by this extension, and by accepting this disclaimer, hold the sole responsibility of any damages done.\n\nIf this scared you, you can calm down a bit. This has been tested on numerous devices without problem. And in effect, nothing SHOULD go wrong. But your device might be different, and it has a small possibility of something backfiring. Hence the disclaimer ;)</string>
-    <string name="app_firstrunwarning_positive">Go ahead</string>
-    <string name="app_firstrunwarning_negative">Nevermind</string>
-    <string name="app_firstruninstructions_title">Instructions</string>
-    <string name="app_firstruninstructions_summary">Now we can proceed activating the extension!\n\nActually, this is an Xposed module (https://jonathan-apps.com/help/faq/what-is-xposed/), which requires the Xposed Framework. If you already have Xposed, tap on \"ENABLE\".\n\nOtherwise, tap on \"DOWNLOAD\".</string>
+    <string name="app_firstrunwarning_positive">GO AHEAD</string>
+    <string name="app_firstrunwarning_negative">NEVERMIND</string>
+    <!--string name="app_firstruninstructions_title">Instructions</string>
+    <string name="app_firstruninstructions_summary">Now we can proceed activating the extension!\n\nActually, this is an Xposed module (https://jonathan-apps.com/help/faq/what-is-xposed/), which requires the Xposed Framework. If you already have Xposed, tap on “ENABLE”.\n\nOtherwise, tap on “DOWNLOAD”.</string>
     <string name="app_firstruninstructions_positive">Download</string>
-    <string name="app_firstruninstructions_negative">Enable</string>
+    <string name="app_firstruninstructions_negative">Enable</string-->
 
     <!-- Gravity -->
     <string name="option_gravity_1">Top Left Corner</string>
@@ -354,11 +354,33 @@
     <string name="overlay_needed_message">Since Android 6.0, we need you to grant a special permission in order to work correctly.\n\nDon\'t trust us? This project is open source, so you can see our code in https://github.com/JonathanPrecise/FloatingWindows .</string>
 
     <!-- App intro slides -->
-    <string name="slide1_title">The productivity of a Desktop…</string>
-    <string name="slide1_message">Compare two documents, side by side. Have a web page open as you write an article. And more!</string>
-    <string name="slide2_title">… with the portability of your phone or tablet</string>
-    <string name="slide2_message">Use it at home, put it in you pocket and take it with you to another country.</string>
-    <string name="crash_message">Ok, this was not supposed to happen. Don\'t worry though: we have been notified, and shall proceed to fixing this immediately. However, we need you to do us a favor:\nOnce the crash dialog pops up, re-open the app to send us the required information.</string>
+    <string name="slide1_title">A PC on a Cellphone</string>
+    <string name="slide1_message">The true story of the floating windows that turned your Cell phone into a PC…</string>
+    <string name="slide2_title">For the YOU who makes the CHANGES</string>
+    <string name="slide2_message">Floating windows puts an end to your Cell phone limitations</string>
+
+    <string name="crash_message">OK, this was not supposed to happen. Don\'t worry though: we have been notified, and shall proceed to fixing this immediately.</string>
     <string name="crash_title">Uh oh!</string>
+
+    <string name="privacy_crashlytics">Crashlytics Settings</string>
+    <string name="about_app">About this app</string>
+
+    <string name="crashlytics_state_null">State</string>
+    <string name="crashlytics_explanation">In order to provide you with a better experience in the app, we will always collect (anonymized) data in accordance with our Privacy Policy. No personally identifiable information will be recorded, as we value your privacy.\n\nHowever, if you let us do so, we can (try to) detect application crashes related to this Xposed Module. This is completely optional, and will not affect any functionality. By enabling this, you authorize us to detect 3rd-party application crashes, and use that information in accordance with our Privacy Policy.\n\n<b>A reboot is required to apply the setting.</b></string>
+    <string name="crashlytics_activity_title">Crashlytics App Hook</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+
+    <string name="crashlytics_install_title">Crashlytics consent</string>
+    <string name="crashlytics_install_message">Would you like us to collect information about 3rd-party app crashes related to this extension?\n\nIf you change your mind, you can change this in “Crashlytics Settings” in the overflow menu.</string>
+
+    <string name="label_disclaim">Please accept the disclaimer to continue</string>
+    <string name="label_crashlytics_slidechoose">Choose an option to continue</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="privacy_policy">PRIVACY POLICY</string>
+    <string name="gen_error_message">Floating Windows has crashed. We have been notified, and will fix it as soon as possible. Sorry for the inconvenience.</string>
+    <string name="restart">RESTART</string>
+    <string name="error_splash"><![CDATA[<ERROR />]]></string>
 
 </resources>

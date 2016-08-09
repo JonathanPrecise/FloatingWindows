@@ -7,20 +7,33 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.design.widget.Snackbar;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
+import android.view.View;
 import android.widget.TextView;
 
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
+import com.heinrichreimersoftware.materialintro.app.OnNavigationBlockedListener;
+import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
+import com.heinrichreimersoftware.materialintro.slide.Slide;
 
 public class FWIntroActivity extends IntroActivity {
 
     private boolean reShowDialog;
+    private FragmentSlide disclaimerSlide;
+    protected int pageNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setFullscreen(true);
+
         super.onCreate(savedInstanceState);
         boolean overlayPermissions;
+
+        /*setButtonNextVisible(false);
+        setButtonBackVisible(false);*/
 
         reShowDialog = false;
 
@@ -50,6 +63,46 @@ public class FWIntroActivity extends IntroActivity {
                 .background(R.color.colorPrimary)
                 .backgroundDark(R.color.colorPrimaryDark)
                 .build());
+
+        disclaimerSlide = new FragmentSlide.Builder()
+                .background(R.color.colorPrimary)
+                .backgroundDark(R.color.colorPrimaryDark)
+                .fragment(DisclaimerFragment.newInstance())
+                .build();
+        addSlide(disclaimerSlide);
+
+        addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset,
+                                       int positionOffsetPixels) {}
+
+            @Override
+            public void onPageSelected(int position) {
+                pageNum = position;
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {}
+        });
+
+        addOnNavigationBlockedListener(new OnNavigationBlockedListener() {
+            @Override
+            public void onNavigationBlocked(int position, int direction) {
+                View contentView = findViewById(android.R.id.content);
+                if (contentView != null) {
+                    Slide slide = getSlide(position);
+
+                    if (slide == disclaimerSlide) {
+                        Snackbar.make(
+                                contentView,
+                                R.string.label_disclaim,
+                                Snackbar.LENGTH_LONG
+                        ).show();
+                    }
+                }
+            }
+        });
     }
 
     private void overlayConsent() {
@@ -95,5 +148,15 @@ public class FWIntroActivity extends IntroActivity {
                 reShowDialog = false;
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (!(pageNum == 0)) {
+            super.onBackPressed();
+            return;
+        }
+        setResult(RESULT_CANCELED);
+        finish();
     }
 }

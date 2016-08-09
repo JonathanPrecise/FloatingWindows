@@ -2,7 +2,9 @@
   <dictionary name="jonos">
     <words>
       <w>aero</w>
+      <w>crashlytics</w>
       <w>floatingwindow</w>
+      <w>jonos</w>
       <w>pkill</w>
       <w>recents</w>
       <w>statusbar</w>
