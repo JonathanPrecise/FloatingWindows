@@ -180,7 +180,7 @@ public class Common {
 
 
     /* Xposed Constants */
-    public static final int FLAG_FLOATING_WINDOW = 0x00002001; // DesktopMode FLAG_FLOATING_WINDOW
+    public static final int FLAG_FLOATING_WINDOW = 0x00002001; // PocketPC FLAG_FLOATING_WINDOW
     public static final String EXTRA_SNAP_SIDE = ORIGINAL_PACKAGE_NAME + ".EXTRA_SNAP_SIDE";
     public static final String EXTRA_SNAP = ORIGINAL_PACKAGE_NAME + ".EXTRA_SNAP"; //int Gravity flags
     public static final String REFRESH_APP_LAYOUT = ORIGINAL_PACKAGE_NAME + ".REFRESH_APP_LAYOUT";

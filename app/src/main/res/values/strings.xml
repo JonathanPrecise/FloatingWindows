@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?><!--suppress LongLine -->
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="app_name">FloatWin Extension for DesktopMode</string>
+    <string name="app_name">FloatWin Extension for PocketPC</string>
     <string name="launcher_name">FloatWin Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="app_description">Floating Windows extension for rooted Desktop Mode users</string>
+    <string name="app_description">Floating Windows extension for rooted PocketPC users</string>
     <string name="app_blacklist">Ignored apps</string>
     <string name="app_whitelist">Forced apps</string>
     <string name="app_maximized">Maximized apps</string>
@@ -113,7 +113,7 @@
     <string name="pref_maximized_summary">Choose a list of apps to always open maximized</string>
     <string name="pref_maximized_dialog">Newly auto maximized apps need to be force-closed for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.</string>
     <string name="pref_launcher_title">DEPRECATED: FloatDot Launcher Apps</string>
-    <string name="pref_launcher_summary">Choose a list of apps to show in launcher menu. (DEPRECATED: FloatDot Launcher is not relevant to Desktop Mode)</string>
+    <string name="pref_launcher_summary">Choose a list of apps to show in launcher menu. (DEPRECATED: FloatDot Launcher is not relevant to PocketPC)</string>
     <string name="pref_launcher_dialog">To reopen apps as movable you might need to force-close them for changes to take effect.\n\nYou may single press on the app icon for the app info to open. After which, you may select Force Stop.</string>
     <string name="pref_whiteblacklist_title">DEPRECATED: Ignoring/Forcing Options</string>
     <string name="pref_whiteblacklist_summary">Choose a different behavior to use the black and whitelist. (DEPRECATED: Always allow all apps, except those ignored)</string>
@@ -122,7 +122,7 @@
     <string name="pref_move_max_range_title">Sensibility</string>
     <string name="pref_move_max_range_summary">Set less to unsnap easier, more to avoid unwanted unsnaps</string>
     <string name="floating_flags">DEPRECATED: Floating flag system id</string>
-    <string name="floating_flags_summary">This flag is attached to windows so the systems knows their status.\nChoose the Old style to have old launchers working, but you will have infamous Chrome bug.\nNB: To use new flag your launcher must pass it instead of/with the old one.\n(DEPRECATED: DesktopMode always uses new id)</string>
+    <string name="floating_flags_summary">This flag is attached to windows so the systems knows their status.\nChoose the Old style to have old launchers working, but you will have infamous Chrome bug.\nNB: To use new flag your launcher must pass it instead of/with the old one.\n(DEPRECATED: PocketPC always uses new id)</string>
 
     <!-- 4rd Preference Screen -->
     <string name="pref_movable_top_title">Dragging</string>
@@ -288,7 +288,7 @@
     <string name="tbic_theme_none_s">Hide the entire titlebar</string>
     <string name="tbic_theme_original_t">Original Icons</string>
     <string name="tbic_theme_original_s">The icons originally used in XHaloFloatingWindow</string>
-    <string name="tbic_theme_win_t">Classic Desktop</string>
+    <string name="tbic_theme_win_t">Classic PC</string>
     <string name="tbic_theme_win_s">Theme for those who prefer the classic icons found in a certain Operating System from a company in Redmond</string>
     <string name="tbic_theme_clearer_t">Androidy</string>
     <string name="tbic_theme_clearer_s">Theme using Material Icons from Google, embracing Google\'s new design philosophy for a stock, fresh experience</string>

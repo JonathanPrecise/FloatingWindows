@@ -135,7 +135,7 @@ public class MovableWindow
                                                 )
                                         )
                                 )
-                        ) && ((!lpparam.packageName.equals("com.jonathan.desktopmode")) &&
+                        ) && ((!lpparam.packageName.equals("com.jonathan.pocketpc")) &&
                                 (!lpparam.packageName.equals("gravitybox")));
                 if(!mRestartReceiverRegistered)
                     mRestartReceiverRegistered = registerRestartBroadcastReceiver(mCurrentActivity);

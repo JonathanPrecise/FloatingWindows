@@ -45,9 +45,9 @@ public class MainPreference extends AppCompatActivity {
         if (!DesktopModeHelper.isDesktopModeInstalled(this)) {
             new AlertDialog.Builder(this)
                     .setCancelable(false)
-                    .setTitle("Desktop Mode is not installed")
-                    .setMessage("This extension depends on DesktopMode to function correctly. " +
-                            "Please install Desktop Mode, and try again.")
+                    .setTitle("PocketPC is not installed")
+                    .setMessage("This extension depends on PocketPC to function correctly. " +
+                            "Please install PocketPC, and try again.")
                     .setPositiveButton(
                             android.R.string.ok,
                             new DialogInterface.OnClickListener() {
