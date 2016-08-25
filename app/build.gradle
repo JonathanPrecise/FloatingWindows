@@ -12,6 +12,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 
 android {
+
     compileSdkVersion 23
     buildToolsVersion '23.0.3'
     defaultConfig {
@@ -38,6 +39,9 @@ android {
         main {
             aidl.srcDirs = ['src/main/java']
         }
+    }
+    lintOptions {
+        abortOnError false
     }
 }
 
