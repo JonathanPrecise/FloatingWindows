@@ -13,7 +13,7 @@ public class DesktopModeHelper {
         PackageManager pm = context.getPackageManager();
         boolean app_installed;
         try {
-            pm.getPackageInfo("com.jonathan.desktopmode", PackageManager.GET_ACTIVITIES);
+            pm.getPackageInfo("com.jonathan.pocketpc", PackageManager.GET_ACTIVITIES);
             app_installed = true;
         }
         catch (PackageManager.NameNotFoundException e) {

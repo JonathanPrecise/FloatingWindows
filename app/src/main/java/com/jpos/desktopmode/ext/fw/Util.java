@@ -92,6 +92,14 @@ public class Util
         return (int) (dp * scale + 0.5f);
     }
 
+    public static int dpHackInternal(int dp, Context context) {
+        return Math.round(dp * context.getResources().getDisplayMetrics().density);
+    }
+
+    public static int dpHack(int dp, Context context) {
+        return (dpHackInternal(dp, context) / 2);
+    }
+
     /**
      * Create a Border
      * @param color Color of border

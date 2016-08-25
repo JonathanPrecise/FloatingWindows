@@ -127,7 +127,7 @@ public class WindowHolder{
         try {
             DisplayMetrics displayMetrics = mActivity.getResources().getDisplayMetrics();
             int heightInit = displayMetrics.heightPixels;
-            height = heightInit - Util.realDp(72, mActivity);
+            height = heightInit - Util.dpHack(9, mActivity);
         } catch (Throwable t) {
             height = ViewGroup.LayoutParams.MATCH_PARENT;
         }
