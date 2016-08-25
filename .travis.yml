@@ -6,8 +6,8 @@ android:
   components:
     # Uncomment the lines below if you want to
     # use the latest revision of Android SDK Tools
-    # - platform-tools
-    # - tools
+    - platform-tools
+    - tools
 
     # The BuildTools version used by your project
     - build-tools-23.0.3
@@ -23,4 +23,5 @@ android:
     # if you need to run emulator(s) during your tests
     - sys-img-armeabi-v7a-android-23
 script:
-  - ./gradlew build --stacktrace connectedCheck
+  - android list sdk -a
+  - ./gradlew build --debug connectedCheck
