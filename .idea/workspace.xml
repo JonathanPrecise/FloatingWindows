@@ -6,142 +6,9 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3b5b79e-582c-4b23-a9f8-767dac5978e4" name="Default" comment="Added .travis.yaml">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.travis.yaml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/jonos.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/code-comments.xml" afterPath="$PROJECT_DIR$/.idea/code-comments.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_24_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_24_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/answers_1_3_8.xml" afterPath="$PROJECT_DIR$/.idea/libraries/answers_1_3_8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/api_82.xml" afterPath="$PROJECT_DIR$/.idea/libraries/api_82.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/api_82_sources.xml" afterPath="$PROJECT_DIR$/.idea/libraries/api_82_sources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_24_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_24_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/beta_1_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/beta_1_2_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/cardview_v7_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/cardview_v7_23_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/crashlytics_2_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/crashlytics_2_6_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/crashlytics_core_2_3_10.xml" afterPath="$PROJECT_DIR$/.idea/libraries/crashlytics_core_2_3_10.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/customactivityoncrash_1_5_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/customactivityoncrash_1_5_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/design_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/design_23_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/fabric_1_3_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/fabric_1_3_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/material_intro_1_5_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/material_intro_1_5_7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/preference_v14_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/preference_v14_23_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/preference_v7_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/preference_v7_23_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_23_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_24_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_24_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v13_23_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v13_23_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_24_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_24_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_24_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_24_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="e3b5b79e-582c-4b23-a9f8-767dac5978e4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FloatingWindows.iml" afterPath="$PROJECT_DIR$/FloatingWindows.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/xposed_init" afterPath="$PROJECT_DIR$/app/src/main/assets/xposed_init" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/AboutAppActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/AboutAppActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/AeroSnap.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/AeroSnap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/AndroidHooks.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/AndroidHooks.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/AndroidSystemPatcher.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/AndroidSystemPatcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/ApiNotVerifiedException.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/ApiNotVerifiedException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/BrainRecognition.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/BrainRecognition.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/Common.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/Common.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/Compatibility.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/Compatibility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/DesktopModeHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/DesktopModeHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/DisclaimerFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/DisclaimerFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/ExceptionHandlerActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/ExceptionHandlerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/FWIntroActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/FWIntroActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/FloatingWindowsApp.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/FloatingWindowsApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/MWRegister.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/MWRegister.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/MainPreference.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/MainPreference.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/MainXposed.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/MainXposed.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/Movable.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/Movable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/MovableOverlayView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/MovableOverlayView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/MovableWindow.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/MovableWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/OutlineLeftResizable.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/OutlineLeftResizable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/OutlineRightResizable.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/OutlineRightResizable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/RandomHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/RandomHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/Resizable.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/Resizable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/RightResizable.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/RightResizable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/SystemUIHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/SystemUIHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/SystemUIOutliner.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/SystemUIOutliner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/TestingSettingHook.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/TestingSettingHook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/UserIdInvalidException.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/UserIdInvalidException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/Util.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/Util.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/WindowHolder.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/WindowHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/XposedBridgeHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/XposedBridgeHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/BootReceiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/BootReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/CallReceiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/CallReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/FloatDot.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/FloatDot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/FloatLauncher.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/FloatLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/XHFWInterface.aidl" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/XHFWInterface.aidl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/XHFWService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/floatdot/XHFWService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/BehaviorFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/BehaviorFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/ColorPicker.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/ColorPicker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/FloatDotActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/FloatDotActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/FloatDotFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/FloatDotFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/IntListPreference.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/IntListPreference.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/LauncherListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/LauncherListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/MainFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/MainFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/MovingFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/MovingFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/OverlayFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/OverlayFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/TitleBarSettingsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/TitleBarSettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/WidgetBackgroundDimPicker.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/WidgetBackgroundDimPicker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/WidgetFloatPercentage.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/WidgetFloatPercentage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/WidgetGravityChooser.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/WidgetGravityChooser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/WidgetNumberPicker.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/WidgetNumberPicker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/WidgetWindowAlphaPicker.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/WidgetWindowAlphaPicker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/adapters/AppAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/adapters/AppAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/adapters/PackageNameAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/adapters/PackageNameAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/adapters/PageAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/adapters/PageAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/colorpicker/AlphaPatternDrawable.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/colorpicker/AlphaPatternDrawable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/colorpicker/ColorPanelView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/colorpicker/ColorPanelView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/colorpicker/ColorPickerView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/colorpicker/ColorPickerView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/colorpicker/ColorSettingsDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jpos/desktopmode/ext/fw/prefs/colorpicker/ColorSettingsDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_card_ui.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_card_ui.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/round_rect.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/round_rect.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_crashlytics_settings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_crashlytics_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_error_acra.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_error_acra.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_testing.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_testing.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_viewpager.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_viewpager.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_viewpager.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_viewpager.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_blacklist.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_blacklist.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_colorpicker.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_colorpicker.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_floatdot.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_floatdot.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_number_picker.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_number_picker.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_titlebar_icon_theme_chooser.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_titlebar_icon_theme_chooser.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/floatdot_launcher_menuitem.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/floatdot_launcher_menuitem.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/floatdot_submenu_header.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/floatdot_submenu_header.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/floatdot_submenu_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/floatdot_submenu_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_crashlytics.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_crashlytics.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_disclaimer.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_disclaimer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/movable_dialog_transparency.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movable_dialog_transparency.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/movable_window.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/movable_window.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/multiwindow_recents_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/multiwindow_recents_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/pref_seekbar.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pref_seekbar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_statusbar_taskbar_holder.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_statusbar_taskbar_holder.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_statusbar_taskbar_icon.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_statusbar_taskbar_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/launcher_popupmenu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/launcher_popupmenu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/color.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/color.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml/pref_behavior.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml/pref_behavior.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml/pref_floatdot.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml/pref_floatdot.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml/pref_general.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml/pref_general.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml/pref_moving.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml/pref_moving.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml/pref_overlay.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml/pref_overlay.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradlew.bat" afterPath="$PROJECT_DIR$/gradlew.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="FloatingWindows.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -176,21 +43,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".travis.yaml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.travis.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-792">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -1940,6 +1807,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.travis.yaml" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -2022,6 +1890,117 @@
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="Nexus_9_API_23" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.travis.yml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.travis.yaml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
@@ -2325,6 +2304,14 @@
       <option name="presentableId" value="Default" />
       <updated>1472134127660</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added .travis.yaml">
+      <created>1472144802113</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1472144802113</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2394,6 +2381,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-792">
@@ -2402,10 +2397,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yaml">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="144">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
           <folding />
         </state>
       </provider>
