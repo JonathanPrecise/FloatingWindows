@@ -566,7 +566,7 @@ public class MovableWindow
         if(mWindowHolder.mWindow.isFloating())
             return;
 
-        if(mWindowHolder.isSnapped||mWindowHolder.isMaximized) showTitleBar(false);
+        if(mWindowHolder.isSnapped||mWindowHolder.isMaximized) showTitleBar(true); // showTitleBar(false);
         else showTitleBar(true);
     }
 
