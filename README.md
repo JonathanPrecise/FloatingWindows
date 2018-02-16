@@ -1,13 +1,5 @@
 # FloatingWindows [![Build Status](https://travis-ci.org/JonathanPrecise/FloatingWindows.svg?branch=master)](https://travis-ci.org/JonathanPrecise/FloatingWindows) ![Status](https://img.shields.io/badge/status-WIP-yellow.svg) ![HitCount](https://hitt.herokuapp.com/{username||org}/{project-name}.svg) [![GitHub issues](https://img.shields.io/github/issues/JonathanPrecise/FloatingWindows.svg)](https://github.com/JonathanPrecise/FloatingWindows/issues) [![GitHub forks](https://img.shields.io/github/forks/JonathanPrecise/FloatingWindows.svg)](https://github.com/JonathanPrecise/FloatingWindows/network)
 
-[//]: # (![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg))
-
-[//]: # (![Build Status](https://img.shields.io/badge/build-failing-red.svg))
-
-[//]: # (![Status](https://img.shields.io/badge/status-WIP-yellow.svg))
-
-[//]: # (![Status](https://img.shields.io/badge/status-stable-brightgreen.svg))
-
 FloatingWindows extension for DM. **Requires Xposed and a rooted smartphone/tablet**
 
 This is based on [XFHW3](https://github.com/shooash/XHFW3) (a fork of the now unmantained [XHaloFloatingWindow](https://github.com/zst123/XHaloFloatingWindow)). Credits to @shooash for creating XHFW3, and to @zst123 for creating the original XHaloFloatingWindow!
