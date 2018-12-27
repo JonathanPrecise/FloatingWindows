@@ -1,7 +1,6 @@
 # FloatingWindows [![Build Status](https://img.shields.io/travis/JonathanPrecise/FloatingWindows/master.svg?style=flat-square&logo=android&logoColor=white)](https://travis-ci.org/JonathanPrecise/FloatingWindows) ![Status](https://img.shields.io/badge/status-paused-orange.svg?style=flat-square&logo=x-pack&logoColor=white) ![HitCount](https://hitt.herokuapp.com/{username||org}/{project-name}.svg) [![GitHub issues](https://img.shields.io/github/issues/JonathanPrecise/FloatingWindows.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/JonathanPrecise/FloatingWindows/issues) [![GitHub forks](https://img.shields.io/github/forks/JonathanPrecise/FloatingWindows.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/JonathanPrecise/FloatingWindows/network)
 
 **This project, and all plans to work on it, have been temporarily paused. It will, however, resume in an undetetermined future date**
----
 
 FloatingWindows extension. **Requires Xposed and a rooted smartphone/tablet**
 
